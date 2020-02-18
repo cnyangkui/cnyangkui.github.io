@@ -1,0 +1,347 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>神经网络入门</title>
+    <url>/2018/10/30/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%85%A5%E9%97%A8/</url>
+    <content><![CDATA[<p>做了一个神经网络入门级的PPT，主要包括神经网络的一些基础知识：神经元模型、神经网络结构、代价函数、梯度下降算法、反向传播算法等等。</p>
+<a id="more"></a>
+
+<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><img src="/2018/10/30/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%85%A5%E9%97%A8/2.png" class="">
+<img src="/2018/10/30/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%85%A5%E9%97%A8/3.png" class="">
+<img src="/2018/10/30/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%85%A5%E9%97%A8/4.png" class="">
+
+<h2 id="神经元模型"><a href="#神经元模型" class="headerlink" title="神经元模型"></a>神经元模型</h2><img src="/2018/10/30/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%85%A5%E9%97%A8/5.png" class="">
+<img src="/2018/10/30/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%85%A5%E9%97%A8/6.png" class="">
+<img src="/2018/10/30/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%85%A5%E9%97%A8/7.png" class="">
+
+<h2 id="神经网络结构"><a href="#神经网络结构" class="headerlink" title="神经网络结构"></a>神经网络结构</h2><img src="/2018/10/30/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%85%A5%E9%97%A8/8.png" class="">
+
+<h2 id="代价函数"><a href="#代价函数" class="headerlink" title="代价函数"></a>代价函数</h2><img src="/2018/10/30/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%85%A5%E9%97%A8/9.png" class="">
+
+<h2 id="梯度下降算法"><a href="#梯度下降算法" class="headerlink" title="梯度下降算法"></a>梯度下降算法</h2><img src="/2018/10/30/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%85%A5%E9%97%A8/10.png" class="">
+<img src="/2018/10/30/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%85%A5%E9%97%A8/11.png" class="">
+<img src="/2018/10/30/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%85%A5%E9%97%A8/12.png" class="">
+<img src="/2018/10/30/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%85%A5%E9%97%A8/13.png" class="">
+<img src="/2018/10/30/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%85%A5%E9%97%A8/14.png" class="">
+
+<h2 id="反向传播算法"><a href="#反向传播算法" class="headerlink" title="反向传播算法"></a>反向传播算法</h2><img src="/2018/10/30/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%85%A5%E9%97%A8/15.png" class="">
+<img src="/2018/10/30/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%85%A5%E9%97%A8/16.png" class="">
+<img src="/2018/10/30/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%85%A5%E9%97%A8/17.png" class="">
+<img src="/2018/10/30/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%85%A5%E9%97%A8/18.png" class="">
+<img src="/2018/10/30/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%85%A5%E9%97%A8/19.png" class="">
+<img src="/2018/10/30/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%85%A5%E9%97%A8/20.png" class="">
+<img src="/2018/10/30/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%85%A5%E9%97%A8/21.png" class="">
+<img src="/2018/10/30/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%85%A5%E9%97%A8/22.png" class="">
+
+<h2 id="使用神经网络识别手写数字"><a href="#使用神经网络识别手写数字" class="headerlink" title="使用神经网络识别手写数字"></a>使用神经网络识别手写数字</h2><img src="/2018/10/30/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%85%A5%E9%97%A8/23.png" class="">
+<img src="/2018/10/30/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%85%A5%E9%97%A8/24.png" class="">
+
+<h2 id="交叉熵代价函数"><a href="#交叉熵代价函数" class="headerlink" title="交叉熵代价函数"></a>交叉熵代价函数</h2><img src="/2018/10/30/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%85%A5%E9%97%A8/25.png" class="">
+<img src="/2018/10/30/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%85%A5%E9%97%A8/26.png" class="">
+<img src="/2018/10/30/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%85%A5%E9%97%A8/27.png" class="">
+
+<h2 id="过度拟合和规范化"><a href="#过度拟合和规范化" class="headerlink" title="过度拟合和规范化"></a>过度拟合和规范化</h2><img src="/2018/10/30/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%85%A5%E9%97%A8/28.png" class="">
+<img src="/2018/10/30/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%85%A5%E9%97%A8/29.png" class="">
+<img src="/2018/10/30/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%85%A5%E9%97%A8/30.png" class="">
+
+<a href="/2018/10/30/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%85%A5%E9%97%A8/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%85%A5%E9%97%A8PPT.pptx" title="PPT下载">PPT下载</a>]]></content>
+      <categories>
+        <category>Machine Learning</category>
+      </categories>
+      <tags>
+        <tag>Machine Learning</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>神经网络-识别手写数字</title>
+    <url>/2018/10/07/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C-%E8%AF%86%E5%88%AB%E6%89%8B%E5%86%99%E6%95%B0%E5%AD%97/</url>
+    <content><![CDATA[<p>使用MNIST数据集训练神经网络模型。训练数据由28*28的手写数字的图像组成，输入层包含784=28*28个神经元。输入像素是灰度级的，值为0.0表示白色，值为1.0表示黑色，中间数值表示逐渐暗淡的灰色。</p>
+<a id="more"></a>
+
+<img src="/2018/10/07/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C-%E8%AF%86%E5%88%AB%E6%89%8B%E5%86%99%E6%95%B0%E5%AD%97/intro.png" class="">
+
+<h2 id="Algorithm"><a href="#Algorithm" class="headerlink" title="Algorithm"></a>Algorithm</h2><img src="/2018/10/07/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C-%E8%AF%86%E5%88%AB%E6%89%8B%E5%86%99%E6%95%B0%E5%AD%97/algorithm.png" class="">
+
+<h2 id="Codes"><a href="#Codes" class="headerlink" title="Codes"></a>Codes</h2><p>mnist_loader.py: 加载数据</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> pickle</span><br><span class="line"><span class="keyword">import</span> gzip</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">load_data</span><span class="params">()</span>:</span></span><br><span class="line">    f = gzip.open(<span class="string">'data/mnist.pkl.gz'</span>, <span class="string">'rb'</span>)</span><br><span class="line">    training_data, validation_data, test_data = pickle.load(f, encoding=<span class="string">"latin1"</span>)</span><br><span class="line">    f.close()</span><br><span class="line">    <span class="keyword">return</span> (training_data, validation_data, test_data)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">load_data_wrapper</span><span class="params">()</span>:</span></span><br><span class="line">    tr_d, va_d, te_d = load_data()</span><br><span class="line">    <span class="comment"># training_data[0]: x; 1*784</span></span><br><span class="line">    <span class="comment"># training_data[1]: y; 0-9</span></span><br><span class="line">    training_inputs = [np.reshape(x, (<span class="number">784</span>, <span class="number">1</span>)) <span class="keyword">for</span> x <span class="keyword">in</span> tr_d[<span class="number">0</span>]]</span><br><span class="line">    training_results = [vectorized_result(y) <span class="keyword">for</span> y <span class="keyword">in</span> tr_d[<span class="number">1</span>]]</span><br><span class="line">    training_data = zip(training_inputs, training_results)</span><br><span class="line">    validation_inputs = [np.reshape(x, (<span class="number">784</span>, <span class="number">1</span>)) <span class="keyword">for</span> x <span class="keyword">in</span> va_d[<span class="number">0</span>]]</span><br><span class="line">    validation_data = zip(validation_inputs, va_d[<span class="number">1</span>])</span><br><span class="line">    test_inputs = [np.reshape(x, (<span class="number">784</span>, <span class="number">1</span>)) <span class="keyword">for</span> x <span class="keyword">in</span> te_d[<span class="number">0</span>]]</span><br><span class="line">    test_data = zip(test_inputs, te_d[<span class="number">1</span>])</span><br><span class="line">    <span class="keyword">return</span> (training_data, validation_data, test_data)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">vectorized_result</span><span class="params">(j)</span>:</span></span><br><span class="line">    v = np.zeros((<span class="number">10</span>, <span class="number">1</span>))</span><br><span class="line">    v[j] = <span class="number">1.0</span></span><br><span class="line">    <span class="keyword">return</span> v</span><br></pre></td></tr></table></figure>
+
+
+<p>network.py: 算法，包括小批量梯度下降、反向传播算法</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> random</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Network</span><span class="params">(object)</span>:</span></span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, sizes)</span>:</span></span><br><span class="line">        <span class="string">"""初始化权重和偏置</span></span><br><span class="line"><span class="string">        </span></span><br><span class="line"><span class="string">        :param sizes: 每一层神经元数量，类型为list</span></span><br><span class="line"><span class="string">        </span></span><br><span class="line"><span class="string">        weights：权重</span></span><br><span class="line"><span class="string">        biases：偏置</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        </span><br><span class="line">        self.sizes = sizes</span><br><span class="line">        self.num_layers = len(sizes)</span><br><span class="line">        self.weights = np.array([np.random.randn(x, y) <span class="keyword">for</span> x, y <span class="keyword">in</span> zip(sizes[<span class="number">1</span>:], sizes[:<span class="number">-1</span>])])</span><br><span class="line">        self.biases = np.array([np.random.randn(y, <span class="number">1</span>) <span class="keyword">for</span> y <span class="keyword">in</span> sizes[<span class="number">1</span>:]])</span><br><span class="line">        </span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">feedforward</span><span class="params">(self, a)</span>:</span></span><br><span class="line">        <span class="string">"""对一组样本x进行预测，然后输出"""</span></span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span> w, b <span class="keyword">in</span> zip(self.weights, self.biases):</span><br><span class="line">            a = sigmoid(np.dot(w, a) + b)</span><br><span class="line">        <span class="keyword">return</span> a</span><br><span class="line">        </span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">gradient_descent</span><span class="params">(self, training_data, epochs, mini_batch_size, alpha, test_data=None)</span>:</span></span><br><span class="line">        <span class="string">"""MBGD，运行一个或者几个batch时更新一次</span></span><br><span class="line"><span class="string">        </span></span><br><span class="line"><span class="string">        :param training_data: 训练数据，每一个样本包括(x, y)，类型为zip</span></span><br><span class="line"><span class="string">        :epochs: 迭代次数</span></span><br><span class="line"><span class="string">        :mini_batch_size：每一个小批量数据的数量</span></span><br><span class="line"><span class="string">        :alpha: 学习率</span></span><br><span class="line"><span class="string">        :test_data: 测试数据</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        </span><br><span class="line">        training_data = list(training_data)</span><br><span class="line">        n = len(training_data)</span><br><span class="line">        <span class="keyword">if</span> test_data: </span><br><span class="line">            test_data = list(test_data)</span><br><span class="line">            n_test = len(list(test_data))</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(epochs):</span><br><span class="line">            random.shuffle(training_data)</span><br><span class="line">            mini_batches = [training_data[k:k+mini_batch_size] <span class="keyword">for</span> k <span class="keyword">in</span> range(<span class="number">0</span>, n, mini_batch_size)]</span><br><span class="line">            <span class="keyword">for</span> mini_batch <span class="keyword">in</span> mini_batches:</span><br><span class="line">                init_ws_derivative = np.array([np.zeros(w.shape) <span class="keyword">for</span> w <span class="keyword">in</span> self.weights])</span><br><span class="line">                init_bs_derivative = np.array([np.zeros(b.shape) <span class="keyword">for</span> b <span class="keyword">in</span> self.biases])</span><br><span class="line">                <span class="keyword">for</span> x, y <span class="keyword">in</span> mini_batch:</span><br><span class="line">                    activations, zs = self.forwardprop(x) <span class="comment">#前向传播</span></span><br><span class="line">                    delta = self.cost_deviation(activations[<span class="number">-1</span>], zs[<span class="number">-1</span>], y) <span class="comment">#计算最后一层误差</span></span><br><span class="line">                    ws_derivative, bs_derivative = self.backprop(activations, zs, delta) <span class="comment">#反向传播，cost func对w和b求偏导</span></span><br><span class="line">                    init_ws_derivative = init_ws_derivative + ws_derivative</span><br><span class="line">                    init_bs_derivative = init_bs_derivative + bs_derivative</span><br><span class="line">                self.weights = self.weights - alpha / len(mini_batch) * init_ws_derivative</span><br><span class="line">                self.biases = self.biases - alpha / len(mini_batch) * init_bs_derivative</span><br><span class="line">            <span class="keyword">if</span> test_data:</span><br><span class="line">                print(<span class="string">"Epoch &#123;&#125; : &#123;&#125; / &#123;&#125;"</span>.format(i, self.evaluate(test_data), n_test)) <span class="comment">#识别准确数量/测试数据集总数量</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                print(<span class="string">"Epoch &#123;&#125; complete"</span>.format(i))</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">forwardprop</span><span class="params">(self, x)</span>:</span></span><br><span class="line">        <span class="string">"""前向传播"""</span></span><br><span class="line">        </span><br><span class="line">        activation = x</span><br><span class="line">        activations = [x]</span><br><span class="line">        zs = []</span><br><span class="line">        <span class="keyword">for</span> w, b <span class="keyword">in</span> zip(self.weights, self.biases):</span><br><span class="line">            z = np.dot(w, activation) + b</span><br><span class="line">            zs.append(z)</span><br><span class="line">            activation = sigmoid(z)</span><br><span class="line">            activations.append(activation)</span><br><span class="line">        <span class="keyword">return</span> (activations, zs)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">cost_deviation</span><span class="params">(self, output, z, y)</span>:</span></span><br><span class="line">        <span class="string">"""计算最后一层误差"""</span></span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> (output - y) * sigmoid_derivative(z)</span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">backprop</span><span class="params">(self, activations, zs, delta)</span>:</span></span><br><span class="line">        <span class="string">"""反向传播"""</span></span><br><span class="line">        </span><br><span class="line">        ws_derivative = np.array([np.zeros(w.shape) <span class="keyword">for</span> w <span class="keyword">in</span> self.weights])</span><br><span class="line">        bs_derivative = np.array([np.zeros(b.shape) <span class="keyword">for</span> b <span class="keyword">in</span> self.biases])</span><br><span class="line">        ws_derivative[<span class="number">-1</span>] = np.dot(delta, activations[<span class="number">-2</span>].transpose())</span><br><span class="line">        bs_derivative[<span class="number">-1</span>] = delta</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span> l <span class="keyword">in</span> range(<span class="number">2</span>, self.num_layers):</span><br><span class="line">            z = zs[-l]</span><br><span class="line">            delta = np.dot((self.weights[-l+<span class="number">1</span>]).transpose(), delta) * sigmoid_derivative(z)</span><br><span class="line">            ws_derivative[-l] = np.dot(delta, activations[-l<span class="number">-1</span>].transpose())</span><br><span class="line">            bs_derivative[-l] = delta</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> (ws_derivative, bs_derivative)</span><br><span class="line">     </span><br><span class="line">        </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">evaluate</span><span class="params">(self, test_data)</span>:</span></span><br><span class="line">        <span class="string">"""评估"""</span></span><br><span class="line">        </span><br><span class="line">        test_results = [(np.argmax(self.feedforward(x)), y) <span class="keyword">for</span> (x, y) <span class="keyword">in</span> test_data]</span><br><span class="line">        <span class="keyword">return</span> sum(int(output == y) <span class="keyword">for</span> (output, y) <span class="keyword">in</span> test_results)</span><br><span class="line">    </span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">sigmoid</span><span class="params">(z)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">1.0</span> / (<span class="number">1.0</span> + np.exp(-z))</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">sigmoid_derivative</span><span class="params">(z)</span>:</span></span><br><span class="line">    <span class="string">"""sigmoid函数偏导"""</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> sigmoid(z) * (<span class="number">1</span> - sigmoid(z))</span><br></pre></td></tr></table></figure>
+
+
+<p>run.py: 运行，训练一个三层（1个输入层、1个隐藏层、1个输出层）的神经网络模型</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> mnist_loader</span><br><span class="line"><span class="keyword">import</span> network</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    training_data, validation_data, test_data = mnist_loader.load_data_wrapper()</span><br><span class="line">    net = network.Network([<span class="number">784</span>, <span class="number">30</span>, <span class="number">10</span>]) <span class="comment">#28*28</span></span><br><span class="line">    net.gradient_descent(training_data, <span class="number">30</span>, <span class="number">10</span>, <span class="number">3.0</span>, test_data=test_data)</span><br></pre></td></tr></table></figure>
+
+<a href="/2018/10/07/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C-%E8%AF%86%E5%88%AB%E6%89%8B%E5%86%99%E6%95%B0%E5%AD%97/MNIST_handwritten.zip" title="MNIST数据集及源码下载">MNIST数据集及源码下载</a>]]></content>
+      <categories>
+        <category>Machine Learning</category>
+      </categories>
+      <tags>
+        <tag>Machine Learning</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>D3 基础知识</title>
+    <url>/2017/10/16/D3%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%862/</url>
+    <content><![CDATA[<p>D3.js基础知识，介绍了添加元素、绑定数据、使用数据、矢量图SVG、比例尺Scale和坐标轴Axis。本篇案例都是使用D3.js v4版本。</p>
+<a id="more"></a>
+
+<p>D3官网：<a href="https://d3js.org/" target="_blank" rel="noopener">D3</a><br>参考教程：<a href="http://alignedleft.com/tutorials/d3/" target="_blank" rel="noopener">D3 Tutorials - Scott Murray</a></p>
+<h2 id="添加元素"><a href="#添加元素" class="headerlink" title="添加元素"></a>添加元素</h2><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">d3.select(<span class="string">"body"</span>).append(<span class="string">"p"</span>).text(<span class="string">"New paragraph!"</span>)</span><br></pre></td></tr></table></figure>
+
+<p>在html中添加了一个p标签，p标签text值为“New paragraph!”。</p>
+<h2 id="绑定数据"><a href="#绑定数据" class="headerlink" title="绑定数据"></a>绑定数据</h2><h3 id="Array"><a href="#Array" class="headerlink" title="Array"></a>Array</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> dataset = [<span class="number">5</span>, <span class="number">10</span>, <span class="number">15</span>, <span class="number">20</span>, <span class="number">25</span>];</span><br><span class="line">d3.select(<span class="string">"body"</span>)</span><br><span class="line">	.selectAll(<span class="string">"p"</span>)</span><br><span class="line">	.data(dataset)</span><br><span class="line">	.enter()</span><br><span class="line">	.append(<span class="string">"p"</span>)</span><br><span class="line">	.text(<span class="string">"New paragraph!"</span>);</span><br></pre></td></tr></table></figure>
+
+<p><code>d3.select(&quot;body&quot;)</code> —— 在DOM中找到body节点。<br><code>.selctAll(&quot;p&quot;)</code> —— 在上一步找到的body节点中选择所有的p标签节点。如果没有，返回空，但是这个空代表将要存在的段落。<br><code>.data(dataset)</code> —— 绑定数据到选择的DOM元素上。<br><code>.enter()</code> —— enter()将创建一个占位符元素，用来绑定数据。<br><code>.append(&quot;p&quot;)</code> —— 获取enter()创建的占位符，将p元素插入到DOM中。<br><code>.text(&quot;New paragraph!&quot;)</code> —— 为每个p元素插入文本值。</p>
+<p>html中添加了5个p标签，text值均为“New paragraph!”。</p>
+<h3 id="TSV"><a href="#TSV" class="headerlink" title="TSV"></a>TSV</h3><p>TSV是一种方便的表格数据格式。该表格可以从Microsoft Excel等表格程序导出，也可以在文本编辑器中手工编写。每一行代表一个表行，其中每行的数据由制表符Tab分隔组成。第一行是标题行，并指定列名。例如，我们的数据文件data.tsv内容如下：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">name	value</span><br><span class="line">Locke	4</span><br><span class="line">Reyes	8</span><br><span class="line">Ford	15</span><br><span class="line">Jarrah	16</span><br><span class="line">Jone	23</span><br><span class="line">Kwon	42</span><br></pre></td></tr></table></figure>
+
+<p>要在浏览器中使用此数据，需要从服务器下载文件，然后解析文件，将文件的文本转换为可用的JavaScript对象。这件事情可以由函数d3.tsv实现。<br>下载是异步的。当调用d3.tsv时，文件在后台下载然后返回数据。在下载完成后的某个时候，回调函数将使用新数据调用，如果下载失败，则返回错误。</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 1. 这里的代码首先运行，处于文件下载前。</span></span><br><span class="line">d3.tsv(<span class="string">"data.tsv"</span>, <span class="function"><span class="keyword">function</span>(<span class="params">error, data</span>) </span>&#123;</span><br><span class="line">	<span class="comment">//3. 这里的代码最后运行，此时文件下载完成。</span></span><br><span class="line">&#125;);</span><br><span class="line"><span class="comment">// 2. 这里的代码第二时间运行，文件正在下载中。</span></span><br></pre></td></tr></table></figure>
+
+<p>TSV文件的文本转换为JavaScript对象是这个样子：</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> data = [</span><br><span class="line">	&#123;<span class="attr">name</span>: <span class="string">"Locke"</span>, <span class="attr">value</span>: <span class="number">4</span>&#125;,</span><br><span class="line">	&#123;<span class="attr">name</span>: <span class="string">"Reyes"</span>, <span class="attr">value</span>: <span class="number">8</span>&#125;,</span><br><span class="line">	&#123;<span class="attr">name</span>: <span class="string">"Ford"</span>, <span class="attr">value</span>:<span class="number">15</span>&#125;,</span><br><span class="line">	&#123;<span class="attr">name</span>: <span class="string">"Jarrah"</span>, <span class="attr">value</span>: <span class="number">16</span>&#125;,</span><br><span class="line">	&#123;<span class="attr">name</span>: <span class="string">"Jone"</span>, <span class="attr">value</span>: <span class="number">23</span>&#125;,</span><br><span class="line">	&#123;<span class="attr">name</span>: <span class="string">"Kwon"</span>, <span class="attr">value</span>: <span class="number">42</span>&#125;</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+
+<p>使用<code>d3.json</code>、<code>d3.csv</code>能够分别从json文件、csv文件绑定数据，用法相同。</p>
+<h2 id="使用数据"><a href="#使用数据" class="headerlink" title="使用数据"></a>使用数据</h2><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> dataset = [<span class="number">5</span>, <span class="number">10</span>, <span class="number">15</span>, <span class="number">20</span>, <span class="number">25</span>];</span><br><span class="line">d3.select(<span class="string">"body"</span>)</span><br><span class="line">	.selectAll(<span class="string">"p"</span>)</span><br><span class="line">	.data(dataset)</span><br><span class="line">	.enter()</span><br><span class="line">	.append(<span class="string">"p"</span>)</span><br><span class="line">	.text(<span class="function"><span class="keyword">function</span>(<span class="params">d</span>) </span>&#123; <span class="keyword">return</span> d; &#125;);</span><br></pre></td></tr></table></figure>
+
+<p>创建了5个p标签，text值分别为5，10，15，20，25。</p>
+<h2 id="绘制div"><a href="#绘制div" class="headerlink" title="绘制div"></a>绘制div</h2><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">title</span>&gt;</span><span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">type</span>=<span class="string">"text/css"</span>&gt;</span></span><br><span class="line"><span class="css">	<span class="selector-tag">div</span><span class="selector-class">.bar</span> &#123;</span></span><br><span class="line">		display: inline-block;</span><br><span class="line">		width: 20px;</span><br><span class="line"><span class="css">		<span class="selector-tag">height</span>: 75<span class="selector-tag">px</span>;   <span class="comment">/* We'll override this later */</span></span></span><br><span class="line">		background-color: teal;</span><br><span class="line">		margin-left: 2px;</span><br><span class="line">	&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"example"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://d3js.org/d3.v4.min.js"</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span></span><br><span class="line"><span class="actionscript">	<span class="keyword">var</span> dataset = [];                        <span class="comment">//Initialize empty array</span></span></span><br><span class="line"><span class="actionscript">	<span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="number">25</span>; i++) &#123;           <span class="comment">//Loop 25 times</span></span></span><br><span class="line"><span class="javascript">	    <span class="keyword">var</span> newNumber = <span class="built_in">Math</span>.random() * <span class="number">30</span>;  <span class="comment">//New random number (0-30)</span></span></span><br><span class="line"><span class="actionscript">	    dataset.push(newNumber);             <span class="comment">//Add new number to array</span></span></span><br><span class="line">	&#125;</span><br><span class="line"><span class="actionscript">	d3.select(<span class="string">"#example"</span>).selectAll(<span class="string">"div"</span>)</span></span><br><span class="line">	    .data(dataset)</span><br><span class="line">	    .enter()</span><br><span class="line"><span class="actionscript">	    .append(<span class="string">"div"</span>)</span></span><br><span class="line"><span class="actionscript">	    .attr(<span class="string">"class"</span>, <span class="string">"bar"</span>)</span></span><br><span class="line"><span class="actionscript">	    .style(<span class="string">"height"</span>, <span class="function"><span class="keyword">function</span><span class="params">(d)</span> </span>&#123;</span></span><br><span class="line"><span class="actionscript">	        <span class="keyword">var</span> barHeight = d * <span class="number">5</span>;</span></span><br><span class="line"><span class="actionscript">	        <span class="keyword">return</span> barHeight + <span class="string">"px"</span>;</span></span><br><span class="line">	    &#125;);</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>效果图如下：</p>
+
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+<style type="text/css">
+	div.bar {
+		display: inline-block;
+		width: 20px;
+		height: 75px;   /* We'll override this later */
+		background-color: teal;
+		margin-left: 2px;
+	}
+</style>
+</head>
+<body>
+	<div id="example"></div>
+<script src="https://d3js.org/d3.v4.min.js"></script>
+<script type="text/javascript">
+	var dataset = [];                        //Initialize empty array
+	for (var i = 0; i < 25; i++) {           //Loop 25 times
+	    var newNumber = Math.random() * 30;  //New random number (0-30)
+	    dataset.push(newNumber);             //Add new number to array
+	}
+	d3.select("#example").selectAll("div")
+	    .data(dataset)
+	    .enter()
+	    .append("div")
+	    .attr("class", "bar")
+	    .style("height", function(d) {
+	        var barHeight = d * 5;
+	        return barHeight + "px";
+	    });
+</script>
+</body>
+<html>
+
+
+<h2 id="SVG"><a href="#SVG" class="headerlink" title="SVG"></a>SVG</h2><p>在绘制任何东西之前，必须先创建一个SVG元素，并将该SVG元素作为绘制视觉效果的画布。最好指定SVG的宽度和高度。</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">svg</span> <span class="attr">width</span>=<span class="string">"500"</span> <span class="attr">height</span>=<span class="string">"50"</span>&gt;</span><span class="tag">&lt;/<span class="name">svg</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>常用的svg标签有<code>rect</code>、<code>circle</code>、<code>ellipse</code>、<code>line</code>、<code>text</code>、<code>path</code>。</p>
+<h3 id="rect"><a href="#rect" class="headerlink" title="rect"></a>rect</h3><p>rect绘制一个矩形。使用x和y指定左上角的坐标，width和height分别指定矩形的宽度和高度。</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">rect</span> <span class="attr">x</span>=<span class="string">"0"</span> <span class="attr">y</span>=<span class="string">"0"</span> <span class="attr">width</span>=<span class="string">"500"</span> <span class="attr">height</span>=<span class="string">"50"</span> /&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>效果图：</p>
+
+<svg width="500" height="50"><rect x="0" y="0" width="500" height="50" /></svg>
+
+
+<h3 id="circle"><a href="#circle" class="headerlink" title="circle"></a>circle</h3><p>circle绘制一个圆。使用cx和cy指定圆心的坐标，r指定半径。</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">circle</span> <span class="attr">cx</span>=<span class="string">"250"</span> <span class="attr">cy</span>=<span class="string">"25"</span> <span class="attr">r</span>=<span class="string">"25"</span> /&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>效果图：</p>
+
+<svg width="500" height="50"><circle cx="250" cy="25" r="25" /></svg>
+
+
+<h3 id="ellipse"><a href="#ellipse" class="headerlink" title="ellipse"></a>ellipse</h3><p>ellipse绘制一个椭圆。与圆类似，使用cx和cy指定中心的坐标，但是对于每个轴需要单独的半径值。rx为横轴方向的半径，ry为纵轴方向的半径。</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ellipse</span> <span class="attr">cx</span>=<span class="string">"250"</span> <span class="attr">cy</span>=<span class="string">"25"</span> <span class="attr">rx</span>=<span class="string">"100"</span> <span class="attr">ry</span>=<span class="string">"25"</span> /&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>效果图：</p>
+
+<svg width="500" height="50"><ellipse cx="250" cy="25" rx="100" ry="25" /></svg>
+
+
+<h3 id="line"><a href="#line" class="headerlink" title="line"></a>line</h3><p>line绘制一条线条。使用x1和y1来指定线一端的坐标，x2和y2指定另一端的坐标。必须指定线条的颜色使线条可见。</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">line</span> <span class="attr">x1</span>=<span class="string">"0"</span> <span class="attr">y1</span>=<span class="string">"0"</span> <span class="attr">x2</span>=<span class="string">"500"</span> <span class="attr">y2</span>=<span class="string">"50"</span> <span class="attr">stroke</span>=<span class="string">"black"</span> /&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>效果图：</p>
+
+<svg width="500" height="50"><line x1="0" y1="0" x2="500" y2="50" stroke="black" /></svg>
+
+
+<h3 id="text"><a href="#text" class="headerlink" title="text"></a>text</h3><p>text呈现文字。使用x指定左边缘的位置，y指定基线的垂直位置。</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">text</span> <span class="attr">x</span>=<span class="string">"250"</span> <span class="attr">y</span>=<span class="string">"25"</span>&gt;</span>Hello World<span class="tag">&lt;/<span class="name">text</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>效果图：</p>
+
+<svg width="500" height="50"><text x="250" y="25">Hello World</text></svg>
+
+
+<p>text继承父元素CSS指定的字体样式。我们也可以覆盖格式如下：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">text</span> <span class="attr">x</span>=<span class="string">"250"</span> <span class="attr">y</span>=<span class="string">"25"</span> <span class="attr">font-family</span>=<span class="string">"sans-serif"</span> <span class="attr">font-size</span>=<span class="string">"25"</span> <span class="attr">fill</span>=<span class="string">"steelblue"</span>&gt;</span>Hello World<span class="tag">&lt;/<span class="name">text</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>效果图：</p>
+
+<svg width="500" height="50">
+	<text x="250" y="25" font-family="sans-serif" font-size="25" fill="steelblue">Hello World</text>
+</svg>
+
+
+<h3 id="path"><a href="#path" class="headerlink" title="path"></a>path</h3><p>path用于绘制更为复杂的内容（如地理图的国家轮廓等）。现在，我们先掌握简单的形状。</p>
+<h2 id="Scale"><a href="#Scale" class="headerlink" title="Scale"></a>Scale</h2><p>D3的scale函数可以定义一个缩放比例。调用scale函数时，传入一个数据值，可以返回一个缩放后的输出值。</p>
+<p>创建一个Scale:</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> scale = d3.scaleLinear();</span><br></pre></td></tr></table></figure>
+
+<p>使用domain函数可以设置数据的输入域：</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">scale.domain([<span class="number">100</span>, <span class="number">500</span>]);</span><br></pre></td></tr></table></figure>
+
+<p>使用range函数可以设置数据的输出域：</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">scale.range([<span class="number">10</span>, <span class="number">350</span>]);</span><br></pre></td></tr></table></figure>
+
+<p>可以将上述步骤链接在一行代码中：</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> scale = d3.scaleLinear()</span><br><span class="line">	.domain([<span class="number">100</span>, <span class="number">500</span>])</span><br><span class="line">	.range([<span class="number">10</span>, <span class="number">350</span>]);</span><br><span class="line"></span><br><span class="line">scale(<span class="number">100</span>);	<span class="comment">//Returns 10</span></span><br><span class="line">scale(<span class="number">300</span>);	<span class="comment">//Returns 180</span></span><br><span class="line">scale(<span class="number">500</span>);	<span class="comment">//Returns 350</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="Axis"><a href="#Axis" class="headerlink" title="Axis"></a>Axis</h2><p>axis函数用来创建坐标轴。<br><code>d3.axisTop</code> - 创建一个上部轴生成器。<br><code>d3.axisRight</code> - 创建一个右部轴生成器。<br><code>d3.axisBottom</code> - 创建一个底部轴生成器。<br><code>d3.axisLeft</code> - 创建一个左部轴生成器。</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> xAxis = d3.axisBottom();</span><br></pre></td></tr></table></figure>
+
+<p>每个轴需告知操作的尺度规模大小,即scale：</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">xAxis.scale(xScale);</span><br></pre></td></tr></table></figure>
+
+<p>可以使用ticks函数告诉坐标轴粗略的设置几个刻度：</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">xAxis.ticks(<span class="number">5</span>);</span><br></pre></td></tr></table></figure>
+
+<p>我们也可以把代码链接起来：</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> xAxis = d3.axisBottom()</span><br><span class="line">	.scale(xScale)</span><br><span class="line">	.ticks(<span class="number">5</span>);</span><br></pre></td></tr></table></figure>
+
+<p>最后，我们把生成的轴插入到SVG中。</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">svg.append(<span class="string">"g"</span>)</span><br><span class="line">	.call(xAxis);</span><br></pre></td></tr></table></figure>
+
+
+]]></content>
+      <categories>
+        <category>Visualization</category>
+      </categories>
+      <tags>
+        <tag>D3.js</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>D3 基础知识-核心概念</title>
+    <url>/2017/10/11/D3%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%861-%E6%A0%B8%E5%BF%83%E6%A6%82%E5%BF%B5/</url>
+    <content><![CDATA[<p><a href="https://d3js.org/" target="_blank" rel="noopener">D3.js</a>是一个JavaScript的函数库，主要用来做数据可视化。</p>
+<p>本节内容介绍了选择集、动态属性、enter、exit、update操作和过渡。选择集描述如何选中想要操作的节点；动态属性控制选中节点元素的属性；enter、exit、update分别来添加节点、移除节点、更新节点；过渡用来制作动画效果。</p>
+<a id="more"></a>
+
+<p>下载最新版本（4.11.0）在这里：</p>
+<ul>
+<li><a href="https://github.com/d3/d3/releases/download/v4.11.0/d3.zip" target="_blank" rel="noopener">d3.zip</a></li>
+</ul>
+<p>也可直接链接，拷贝下面片段：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://d3js.org/d3.v4.min.js"</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+<p>D3教程：<a href="https://github.com/d3/d3/wiki/Tutorials" target="_blank" rel="noopener">点击这里</a></p>
+<h2 id="Selections"><a href="#Selections" class="headerlink" title="Selections"></a>Selections</h2><p>D3可以选择某一种标签的所有节点进行批量操作，也可以根据需要选择单独的节点进行操作。当使用JavaScrip对某一种标签节点操作时需要进行迭代操作，而使用D3可以批量操作，减少代码冗余。</p>
+<p>选择所有节点进行操作：</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">d3.selectAll(<span class="string">"p"</span>).style(<span class="string">"color"</span>, <span class="string">"white"</span>);</span><br></pre></td></tr></table></figure>
+
+<p>选择单独节点进行操作：</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">d3.select(<span class="string">"body"</span>).style(<span class="string">"background-color"</span>, <span class="string">"black"</span>);</span><br></pre></td></tr></table></figure>
+
+<p>以上示例是按照标签名来选择节点元素（“p”和“body”），还可以按照attribute value、class、id等选择节点元素。与jQuery相似，使用<strong>#</strong>匹配<strong>id</strong>，<strong>.</strong>匹配<strong>class</strong>……</p>
+<h2 id="Dynamic-Properties"><a href="#Dynamic-Properties" class="headerlink" title="Dynamic Properties"></a>Dynamic Properties</h2><p>样式、属性可以被指定为D3中数据的函数，而不仅仅是简单的常量。</p>
+<p>例如，随机初始化段落的颜色：</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">d3.selectAll(<span class="string">"p"</span>).style(<span class="string">"color"</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="string">"hsl("</span> + <span class="built_in">Math</span>.random() * <span class="number">360</span> + <span class="string">",100%,50%)"</span>;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<p>根据奇偶设置段落的颜色：</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">d3.selectAll(<span class="string">"p"</span>).style(<span class="string">"color"</span>, <span class="function"><span class="keyword">function</span>(<span class="params">d, i</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> i % <span class="number">2</span> ? <span class="string">"#fff"</span> : <span class="string">"#eee"</span>;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<p>数据可以动态绑定到节点元素中。数据被指定为一个数组，每个元素作为一个参数传递到函数中，默认情况下是按索引逐个元素进行传递，数组中的第一个元素被传递给第一个节点，第二个元素被传递给第二个节点，以此类推。</p>
+<p>例如，将数字数组绑定到段落元素，段落字体大小按数组中这些数字来依次显示：</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">d3.selectAll(<span class="string">"p"</span>)</span><br><span class="line">  .data([<span class="number">4</span>, <span class="number">8</span>, <span class="number">15</span>, <span class="number">16</span>, <span class="number">23</span>, <span class="number">42</span>])</span><br><span class="line">  .style(<span class="string">"font-size"</span>, <span class="function"><span class="keyword">function</span>(<span class="params">d</span>) </span>&#123; <span class="keyword">return</span> d + <span class="string">"px"</span>; &#125;);</span><br></pre></td></tr></table></figure>
+
+<h2 id="Enter-and-Exit"><a href="#Enter-and-Exit" class="headerlink" title="Enter and Exit"></a>Enter and Exit</h2><p>使用enter和exit函数，分别可以为传入的数据创建新的节点和去除多余的节点。</p>
+<p>当数组绑定到节点时，数组中的元素逐个与选中的节点进行绑定。如果节点数量少于数组元素数量时，会创建新节点绑定多出的数据。如果节点数量多于数组元素数量时，会移除末尾多出的节点。enter之后一般使用append来进行节点元素的实际创建，exit之后一般使用remove来移除多出的节点。</p>
+<p>例：</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">d3.select(<span class="string">"body"</span>)</span><br><span class="line">  .selectAll(<span class="string">"p"</span>)</span><br><span class="line">  .data([<span class="number">4</span>, <span class="number">8</span>, <span class="number">15</span>, <span class="number">16</span>, <span class="number">23</span>, <span class="number">42</span>])</span><br><span class="line">  .enter().append(<span class="string">"p"</span>)</span><br><span class="line">  .text(<span class="function"><span class="keyword">function</span>(<span class="params">d</span>) </span>&#123; <span class="keyword">return</span> <span class="string">"I’m number "</span> + d + <span class="string">"!"</span>; &#125;);</span><br></pre></td></tr></table></figure>
+
+<p>更新节点元素。不会创建新的节点。</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">// Update...</span></span><br><span class="line"><span class="keyword">var</span> p = d3.select(<span class="string">"body"</span>)</span><br><span class="line">  .selectAll(<span class="string">"p"</span>)</span><br><span class="line">  .data([<span class="number">4</span>, <span class="number">8</span>, <span class="number">15</span>, <span class="number">16</span>, <span class="number">23</span>, <span class="number">42</span>])</span><br><span class="line">  .text(<span class="function"><span class="keyword">function</span>(<span class="params">d</span>) </span>&#123; <span class="keyword">return</span> d; &#125;);</span><br></pre></td></tr></table></figure>
+
+<p>创建新的节点。当节点数量小于数组元素数量时，创建新的节点，使节点数量与数据元素数量相等。</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">// Enter...</span></span><br><span class="line">p.enter().append(<span class="string">"p"</span>)</span><br><span class="line">	.text(<span class="function"><span class="keyword">function</span>(<span class="params">d</span>) </span>&#123; <span class="keyword">return</span> d; &#125;);</span><br></pre></td></tr></table></figure>
+
+<p>删除多余节点。当节点数量大于数组元素数量时，移除末尾多余的节点，使节点数量与数据元素数量相等。</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">// Exit...</span></span><br><span class="line">p.exit().remove();</span><br></pre></td></tr></table></figure>
+
+<h2 id="Transitions"><a href="#Transitions" class="headerlink" title="Transitions"></a>Transitions</h2><p>D3支持动画效果，这种动画效果可以通过对样式属性的过渡实现。其补间插值支持多种方式，比如线性、弹性等。</p>
+<p>d3-transition详解：<a href="https://github.com/d3/d3-transition" target="_blank" rel="noopener">点击这里</a></p>
+<p>这里介绍四个函数。</p>
+<p><strong>transition()</strong><br>启动过渡效果。其前后是图形变化前后的状态（形状、位置、颜色等等）。</p>
+<p><strong>duration()</strong><br>指定过渡的持续时间，单位为毫秒。</p>
+<p><strong>ease()</strong><br>指定过渡的方式，常用的有：</p>
+<ul>
+<li>linear：普通的线性变化</li>
+<li>circle：慢慢地到达变换的最终状态</li>
+<li>elastic：带有弹跳的到达最终状态</li>
+<li>bounce：在最终状态处弹跳几次</li>
+</ul>
+<p><strong>delay()</strong><br>指定延迟的时间，表示一定时间后才开始转变，单位同样为毫秒。此函数可以对整体指定延迟，也可以对个别指定延迟。</p>
+<p>例，背景色过渡到黑色，1秒后开始过渡，过渡时长为1秒：</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">d3.select(<span class="string">"body"</span>).transition()</span><br><span class="line">  .delay(<span class="number">1000</span>)</span><br><span class="line">  .duration(<span class="number">1000</span>)</span><br><span class="line">  .style(<span class="string">"background-color"</span>, <span class="string">"black"</span>);</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>Visualization</category>
+      </categories>
+      <tags>
+        <tag>D3.js</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>2017年深圳大学可视计算暑期学校 3ds Max 实践</title>
+    <url>/2017/07/30/%E6%B7%B1%E5%9C%B3%E5%A4%A7%E5%AD%A6%E5%8F%AF%E8%A7%86%E8%AE%A1%E7%AE%97%E6%9A%91%E6%9C%9F%E5%AD%A6%E6%A0%A13dsMax%E5%AE%9E%E8%B7%B5/</url>
+    <content><![CDATA[<p>今年这个时候，正在为保研推免的事情到处奔波，报名参加了深圳大学可视计算暑期学校。具体活动内容包括：由国内外著名学者和教授开设计算机图形学、计算机视觉以及可视化领域的前沿学术讲座；上实践课程，指导学生运用在广告、影视、游戏等各行业应用广泛的3ds Max软件完成简单模型的创建。</p>
+<a id="more"></a>
+
+<p>在这次四天的学习中，教授的全英文讲座听得我一脸懵逼，全靠PPT涨见识。在实践课中，倒是把3ds Max小小入门了下，后来莫名其妙成为了该期暑期学校的优秀学员，心虚 (ಡωಡ) </p>
+<img src="/2017/07/30/%E6%B7%B1%E5%9C%B3%E5%A4%A7%E5%AD%A6%E5%8F%AF%E8%A7%86%E8%AE%A1%E7%AE%97%E6%9A%91%E6%9C%9F%E5%AD%A6%E6%A0%A13dsMax%E5%AE%9E%E8%B7%B5/summer_school.png" class="">
+
+<h2 id="我的作品"><a href="#我的作品" class="headerlink" title="我的作品"></a>我的作品</h2><img src="/2017/07/30/%E6%B7%B1%E5%9C%B3%E5%A4%A7%E5%AD%A6%E5%8F%AF%E8%A7%86%E8%AE%A1%E7%AE%97%E6%9A%91%E6%9C%9F%E5%AD%A6%E6%A0%A13dsMax%E5%AE%9E%E8%B7%B5/1.jpg" class="">
+
+<p>主要使用简单立体模型的创建和移动、缩放、旋转等操作，最后进行灯光渲染。</p>
+<img src="/2017/07/30/%E6%B7%B1%E5%9C%B3%E5%A4%A7%E5%AD%A6%E5%8F%AF%E8%A7%86%E8%AE%A1%E7%AE%97%E6%9A%91%E6%9C%9F%E5%AD%A6%E6%A0%A13dsMax%E5%AE%9E%E8%B7%B5/2.jpg" class="">
+
+<p>主要使用样条线、多边形的编辑、挤出等操作。培养空间思维，掌握三视图的配合使用，能够更好地进行3D建模。</p>
+<img src="/2017/07/30/%E6%B7%B1%E5%9C%B3%E5%A4%A7%E5%AD%A6%E5%8F%AF%E8%A7%86%E8%AE%A1%E7%AE%97%E6%9A%91%E6%9C%9F%E5%AD%A6%E6%A0%A13dsMax%E5%AE%9E%E8%B7%B5/3.jpg" class="">
+
+<p>通过车削操作，进行苹果、高脚杯、瓶子、罐子等简单模型的创建；贴图操作，能够将创建的模型贴上适合的皮肤图片。苹果的影子有个小洞（捂脸）</p>
+<img src="/2017/07/30/%E6%B7%B1%E5%9C%B3%E5%A4%A7%E5%AD%A6%E5%8F%AF%E8%A7%86%E8%AE%A1%E7%AE%97%E6%9A%91%E6%9C%9F%E5%AD%A6%E6%A0%A13dsMax%E5%AE%9E%E8%B7%B5/4.jpg" class="">
+
+<p>一个大杂烩，将前面讲到的操作基本都用上了。</p>
+<img src="/2017/07/30/%E6%B7%B1%E5%9C%B3%E5%A4%A7%E5%AD%A6%E5%8F%AF%E8%A7%86%E8%AE%A1%E7%AE%97%E6%9A%91%E6%9C%9F%E5%AD%A6%E6%A0%A13dsMax%E5%AE%9E%E8%B7%B5/5.jpg" class="">
+
+<p>这是树形结构的创意书架，主要使用了样条线的编辑和挤出操作等，加上灯光的渲染。</p>
+]]></content>
+      <categories>
+        <category>Others</category>
+      </categories>
+      <tags>
+        <tag>3ds Max</tag>
+      </tags>
+  </entry>
+</search>

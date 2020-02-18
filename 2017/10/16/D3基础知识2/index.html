@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Pisces","version":"7.7.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="D3.js基础知识，介绍了添加元素、绑定数据、使用数据、矢量图SVG、比例尺Scale和坐标轴Axis。本篇案例都是使用D3.js v4版本。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="D3 基础知识">
+<meta property="og:url" content="http://yoursite.com/2017/10/16/D3%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%862/index.html">
+<meta property="og:site_name" content="yhahahak">
+<meta property="og:description" content="D3.js基础知识，介绍了添加元素、绑定数据、使用数据、矢量图SVG、比例尺Scale和坐标轴Axis。本篇案例都是使用D3.js v4版本。">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2017-10-15T16:00:00.000Z">
+<meta property="article:modified_time" content="2020-02-18T14:32:27.782Z">
+<meta property="article:author" content="Kui Yang">
+<meta property="article:tag" content="D3.js">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://yoursite.com/2017/10/16/D3%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%862/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true
+  };
+</script>
+
+  <title>D3 基础知识 | yhahahak</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">yhahahak</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+  </div>
+
+  <div class="site-nav-right"></div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+
+</nav>
+  <div class="site-search">
+    <div class="popup search-popup">
+    <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocorrect="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result"></div>
+
+</div>
+<div class="search-pop-overlay"></div>
+
+  </div>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/10/16/D3%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%862/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Kui Yang">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="yhahahak">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          D3 基础知识
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2017-10-16 00:00:00" itemprop="dateCreated datePublished" datetime="2017-10-16T00:00:00+08:00">2017-10-16</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-02-18 22:32:27" itemprop="dateModified" datetime="2020-02-18T22:32:27+08:00">2020-02-18</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Visualization/" itemprop="url" rel="index">
+                    <span itemprop="name">Visualization</span>
+                  </a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>D3.js基础知识，介绍了添加元素、绑定数据、使用数据、矢量图SVG、比例尺Scale和坐标轴Axis。本篇案例都是使用D3.js v4版本。</p>
+<a id="more"></a>
+
+<p>D3官网：<a href="https://d3js.org/" target="_blank" rel="noopener">D3</a><br>参考教程：<a href="http://alignedleft.com/tutorials/d3/" target="_blank" rel="noopener">D3 Tutorials - Scott Murray</a></p>
+<h2 id="添加元素"><a href="#添加元素" class="headerlink" title="添加元素"></a>添加元素</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">d3.select(<span class="string">"body"</span>).append(<span class="string">"p"</span>).text(<span class="string">"New paragraph!"</span>)</span><br></pre></td></tr></table></figure>
+
+<p>在html中添加了一个p标签，p标签text值为“New paragraph!”。</p>
+<h2 id="绑定数据"><a href="#绑定数据" class="headerlink" title="绑定数据"></a>绑定数据</h2><h3 id="Array"><a href="#Array" class="headerlink" title="Array"></a>Array</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> dataset = [<span class="number">5</span>, <span class="number">10</span>, <span class="number">15</span>, <span class="number">20</span>, <span class="number">25</span>];</span><br><span class="line">d3.select(<span class="string">"body"</span>)</span><br><span class="line">	.selectAll(<span class="string">"p"</span>)</span><br><span class="line">	.data(dataset)</span><br><span class="line">	.enter()</span><br><span class="line">	.append(<span class="string">"p"</span>)</span><br><span class="line">	.text(<span class="string">"New paragraph!"</span>);</span><br></pre></td></tr></table></figure>
+
+<p><code>d3.select(&quot;body&quot;)</code> —— 在DOM中找到body节点。<br><code>.selctAll(&quot;p&quot;)</code> —— 在上一步找到的body节点中选择所有的p标签节点。如果没有，返回空，但是这个空代表将要存在的段落。<br><code>.data(dataset)</code> —— 绑定数据到选择的DOM元素上。<br><code>.enter()</code> —— enter()将创建一个占位符元素，用来绑定数据。<br><code>.append(&quot;p&quot;)</code> —— 获取enter()创建的占位符，将p元素插入到DOM中。<br><code>.text(&quot;New paragraph!&quot;)</code> —— 为每个p元素插入文本值。</p>
+<p>html中添加了5个p标签，text值均为“New paragraph!”。</p>
+<h3 id="TSV"><a href="#TSV" class="headerlink" title="TSV"></a>TSV</h3><p>TSV是一种方便的表格数据格式。该表格可以从Microsoft Excel等表格程序导出，也可以在文本编辑器中手工编写。每一行代表一个表行，其中每行的数据由制表符Tab分隔组成。第一行是标题行，并指定列名。例如，我们的数据文件data.tsv内容如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">name	value</span><br><span class="line">Locke	4</span><br><span class="line">Reyes	8</span><br><span class="line">Ford	15</span><br><span class="line">Jarrah	16</span><br><span class="line">Jone	23</span><br><span class="line">Kwon	42</span><br></pre></td></tr></table></figure>
+
+<p>要在浏览器中使用此数据，需要从服务器下载文件，然后解析文件，将文件的文本转换为可用的JavaScript对象。这件事情可以由函数d3.tsv实现。<br>下载是异步的。当调用d3.tsv时，文件在后台下载然后返回数据。在下载完成后的某个时候，回调函数将使用新数据调用，如果下载失败，则返回错误。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 1. 这里的代码首先运行，处于文件下载前。</span></span><br><span class="line">d3.tsv(<span class="string">"data.tsv"</span>, <span class="function"><span class="keyword">function</span>(<span class="params">error, data</span>) </span>&#123;</span><br><span class="line">	<span class="comment">//3. 这里的代码最后运行，此时文件下载完成。</span></span><br><span class="line">&#125;);</span><br><span class="line"><span class="comment">// 2. 这里的代码第二时间运行，文件正在下载中。</span></span><br></pre></td></tr></table></figure>
+
+<p>TSV文件的文本转换为JavaScript对象是这个样子：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> data = [</span><br><span class="line">	&#123;<span class="attr">name</span>: <span class="string">"Locke"</span>, <span class="attr">value</span>: <span class="number">4</span>&#125;,</span><br><span class="line">	&#123;<span class="attr">name</span>: <span class="string">"Reyes"</span>, <span class="attr">value</span>: <span class="number">8</span>&#125;,</span><br><span class="line">	&#123;<span class="attr">name</span>: <span class="string">"Ford"</span>, <span class="attr">value</span>:<span class="number">15</span>&#125;,</span><br><span class="line">	&#123;<span class="attr">name</span>: <span class="string">"Jarrah"</span>, <span class="attr">value</span>: <span class="number">16</span>&#125;,</span><br><span class="line">	&#123;<span class="attr">name</span>: <span class="string">"Jone"</span>, <span class="attr">value</span>: <span class="number">23</span>&#125;,</span><br><span class="line">	&#123;<span class="attr">name</span>: <span class="string">"Kwon"</span>, <span class="attr">value</span>: <span class="number">42</span>&#125;</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+
+<p>使用<code>d3.json</code>、<code>d3.csv</code>能够分别从json文件、csv文件绑定数据，用法相同。</p>
+<h2 id="使用数据"><a href="#使用数据" class="headerlink" title="使用数据"></a>使用数据</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> dataset = [<span class="number">5</span>, <span class="number">10</span>, <span class="number">15</span>, <span class="number">20</span>, <span class="number">25</span>];</span><br><span class="line">d3.select(<span class="string">"body"</span>)</span><br><span class="line">	.selectAll(<span class="string">"p"</span>)</span><br><span class="line">	.data(dataset)</span><br><span class="line">	.enter()</span><br><span class="line">	.append(<span class="string">"p"</span>)</span><br><span class="line">	.text(<span class="function"><span class="keyword">function</span>(<span class="params">d</span>) </span>&#123; <span class="keyword">return</span> d; &#125;);</span><br></pre></td></tr></table></figure>
+
+<p>创建了5个p标签，text值分别为5，10，15，20，25。</p>
+<h2 id="绘制div"><a href="#绘制div" class="headerlink" title="绘制div"></a>绘制div</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">title</span>&gt;</span><span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">type</span>=<span class="string">"text/css"</span>&gt;</span></span><br><span class="line"><span class="css">	<span class="selector-tag">div</span><span class="selector-class">.bar</span> &#123;</span></span><br><span class="line">		display: inline-block;</span><br><span class="line">		width: 20px;</span><br><span class="line"><span class="css">		<span class="selector-tag">height</span>: 75<span class="selector-tag">px</span>;   <span class="comment">/* We'll override this later */</span></span></span><br><span class="line">		background-color: teal;</span><br><span class="line">		margin-left: 2px;</span><br><span class="line">	&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"example"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://d3js.org/d3.v4.min.js"</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span></span><br><span class="line"><span class="actionscript">	<span class="keyword">var</span> dataset = [];                        <span class="comment">//Initialize empty array</span></span></span><br><span class="line"><span class="actionscript">	<span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="number">25</span>; i++) &#123;           <span class="comment">//Loop 25 times</span></span></span><br><span class="line"><span class="javascript">	    <span class="keyword">var</span> newNumber = <span class="built_in">Math</span>.random() * <span class="number">30</span>;  <span class="comment">//New random number (0-30)</span></span></span><br><span class="line"><span class="actionscript">	    dataset.push(newNumber);             <span class="comment">//Add new number to array</span></span></span><br><span class="line">	&#125;</span><br><span class="line"><span class="actionscript">	d3.select(<span class="string">"#example"</span>).selectAll(<span class="string">"div"</span>)</span></span><br><span class="line">	    .data(dataset)</span><br><span class="line">	    .enter()</span><br><span class="line"><span class="actionscript">	    .append(<span class="string">"div"</span>)</span></span><br><span class="line"><span class="actionscript">	    .attr(<span class="string">"class"</span>, <span class="string">"bar"</span>)</span></span><br><span class="line"><span class="actionscript">	    .style(<span class="string">"height"</span>, <span class="function"><span class="keyword">function</span><span class="params">(d)</span> </span>&#123;</span></span><br><span class="line"><span class="actionscript">	        <span class="keyword">var</span> barHeight = d * <span class="number">5</span>;</span></span><br><span class="line"><span class="actionscript">	        <span class="keyword">return</span> barHeight + <span class="string">"px"</span>;</span></span><br><span class="line">	    &#125;);</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>效果图如下：</p>
+
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+<style type="text/css">
+	div.bar {
+		display: inline-block;
+		width: 20px;
+		height: 75px;   /* We'll override this later */
+		background-color: teal;
+		margin-left: 2px;
+	}
+</style>
+</head>
+<body>
+	<div id="example"></div>
+<script src="https://d3js.org/d3.v4.min.js"></script>
+<script type="text/javascript">
+	var dataset = [];                        //Initialize empty array
+	for (var i = 0; i < 25; i++) {           //Loop 25 times
+	    var newNumber = Math.random() * 30;  //New random number (0-30)
+	    dataset.push(newNumber);             //Add new number to array
+	}
+	d3.select("#example").selectAll("div")
+	    .data(dataset)
+	    .enter()
+	    .append("div")
+	    .attr("class", "bar")
+	    .style("height", function(d) {
+	        var barHeight = d * 5;
+	        return barHeight + "px";
+	    });
+</script>
+</body>
+<html>
+
+
+<h2 id="SVG"><a href="#SVG" class="headerlink" title="SVG"></a>SVG</h2><p>在绘制任何东西之前，必须先创建一个SVG元素，并将该SVG元素作为绘制视觉效果的画布。最好指定SVG的宽度和高度。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">svg</span> <span class="attr">width</span>=<span class="string">"500"</span> <span class="attr">height</span>=<span class="string">"50"</span>&gt;</span><span class="tag">&lt;/<span class="name">svg</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>常用的svg标签有<code>rect</code>、<code>circle</code>、<code>ellipse</code>、<code>line</code>、<code>text</code>、<code>path</code>。</p>
+<h3 id="rect"><a href="#rect" class="headerlink" title="rect"></a>rect</h3><p>rect绘制一个矩形。使用x和y指定左上角的坐标，width和height分别指定矩形的宽度和高度。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">rect</span> <span class="attr">x</span>=<span class="string">"0"</span> <span class="attr">y</span>=<span class="string">"0"</span> <span class="attr">width</span>=<span class="string">"500"</span> <span class="attr">height</span>=<span class="string">"50"</span> /&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>效果图：</p>
+
+<svg width="500" height="50"><rect x="0" y="0" width="500" height="50" /></svg>
+
+
+<h3 id="circle"><a href="#circle" class="headerlink" title="circle"></a>circle</h3><p>circle绘制一个圆。使用cx和cy指定圆心的坐标，r指定半径。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">circle</span> <span class="attr">cx</span>=<span class="string">"250"</span> <span class="attr">cy</span>=<span class="string">"25"</span> <span class="attr">r</span>=<span class="string">"25"</span> /&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>效果图：</p>
+
+<svg width="500" height="50"><circle cx="250" cy="25" r="25" /></svg>
+
+
+<h3 id="ellipse"><a href="#ellipse" class="headerlink" title="ellipse"></a>ellipse</h3><p>ellipse绘制一个椭圆。与圆类似，使用cx和cy指定中心的坐标，但是对于每个轴需要单独的半径值。rx为横轴方向的半径，ry为纵轴方向的半径。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ellipse</span> <span class="attr">cx</span>=<span class="string">"250"</span> <span class="attr">cy</span>=<span class="string">"25"</span> <span class="attr">rx</span>=<span class="string">"100"</span> <span class="attr">ry</span>=<span class="string">"25"</span> /&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>效果图：</p>
+
+<svg width="500" height="50"><ellipse cx="250" cy="25" rx="100" ry="25" /></svg>
+
+
+<h3 id="line"><a href="#line" class="headerlink" title="line"></a>line</h3><p>line绘制一条线条。使用x1和y1来指定线一端的坐标，x2和y2指定另一端的坐标。必须指定线条的颜色使线条可见。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">line</span> <span class="attr">x1</span>=<span class="string">"0"</span> <span class="attr">y1</span>=<span class="string">"0"</span> <span class="attr">x2</span>=<span class="string">"500"</span> <span class="attr">y2</span>=<span class="string">"50"</span> <span class="attr">stroke</span>=<span class="string">"black"</span> /&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>效果图：</p>
+
+<svg width="500" height="50"><line x1="0" y1="0" x2="500" y2="50" stroke="black" /></svg>
+
+
+<h3 id="text"><a href="#text" class="headerlink" title="text"></a>text</h3><p>text呈现文字。使用x指定左边缘的位置，y指定基线的垂直位置。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">text</span> <span class="attr">x</span>=<span class="string">"250"</span> <span class="attr">y</span>=<span class="string">"25"</span>&gt;</span>Hello World<span class="tag">&lt;/<span class="name">text</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>效果图：</p>
+
+<svg width="500" height="50"><text x="250" y="25">Hello World</text></svg>
+
+
+<p>text继承父元素CSS指定的字体样式。我们也可以覆盖格式如下：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">text</span> <span class="attr">x</span>=<span class="string">"250"</span> <span class="attr">y</span>=<span class="string">"25"</span> <span class="attr">font-family</span>=<span class="string">"sans-serif"</span> <span class="attr">font-size</span>=<span class="string">"25"</span> <span class="attr">fill</span>=<span class="string">"steelblue"</span>&gt;</span>Hello World<span class="tag">&lt;/<span class="name">text</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>效果图：</p>
+
+<svg width="500" height="50">
+	<text x="250" y="25" font-family="sans-serif" font-size="25" fill="steelblue">Hello World</text>
+</svg>
+
+
+<h3 id="path"><a href="#path" class="headerlink" title="path"></a>path</h3><p>path用于绘制更为复杂的内容（如地理图的国家轮廓等）。现在，我们先掌握简单的形状。</p>
+<h2 id="Scale"><a href="#Scale" class="headerlink" title="Scale"></a>Scale</h2><p>D3的scale函数可以定义一个缩放比例。调用scale函数时，传入一个数据值，可以返回一个缩放后的输出值。</p>
+<p>创建一个Scale:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> scale = d3.scaleLinear();</span><br></pre></td></tr></table></figure>
+
+<p>使用domain函数可以设置数据的输入域：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scale.domain([<span class="number">100</span>, <span class="number">500</span>]);</span><br></pre></td></tr></table></figure>
+
+<p>使用range函数可以设置数据的输出域：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scale.range([<span class="number">10</span>, <span class="number">350</span>]);</span><br></pre></td></tr></table></figure>
+
+<p>可以将上述步骤链接在一行代码中：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> scale = d3.scaleLinear()</span><br><span class="line">	.domain([<span class="number">100</span>, <span class="number">500</span>])</span><br><span class="line">	.range([<span class="number">10</span>, <span class="number">350</span>]);</span><br><span class="line"></span><br><span class="line">scale(<span class="number">100</span>);	<span class="comment">//Returns 10</span></span><br><span class="line">scale(<span class="number">300</span>);	<span class="comment">//Returns 180</span></span><br><span class="line">scale(<span class="number">500</span>);	<span class="comment">//Returns 350</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="Axis"><a href="#Axis" class="headerlink" title="Axis"></a>Axis</h2><p>axis函数用来创建坐标轴。<br><code>d3.axisTop</code> - 创建一个上部轴生成器。<br><code>d3.axisRight</code> - 创建一个右部轴生成器。<br><code>d3.axisBottom</code> - 创建一个底部轴生成器。<br><code>d3.axisLeft</code> - 创建一个左部轴生成器。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> xAxis = d3.axisBottom();</span><br></pre></td></tr></table></figure>
+
+<p>每个轴需告知操作的尺度规模大小,即scale：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">xAxis.scale(xScale);</span><br></pre></td></tr></table></figure>
+
+<p>可以使用ticks函数告诉坐标轴粗略的设置几个刻度：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">xAxis.ticks(<span class="number">5</span>);</span><br></pre></td></tr></table></figure>
+
+<p>我们也可以把代码链接起来：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> xAxis = d3.axisBottom()</span><br><span class="line">	.scale(xScale)</span><br><span class="line">	.ticks(<span class="number">5</span>);</span><br></pre></td></tr></table></figure>
+
+<p>最后，我们把生成的轴插入到SVG中。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">svg.append(<span class="string">"g"</span>)</span><br><span class="line">	.call(xAxis);</span><br></pre></td></tr></table></figure>
+
+
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/D3-js/" rel="tag"># D3.js</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2017/10/11/D3%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%861-%E6%A0%B8%E5%BF%83%E6%A6%82%E5%BF%B5/" rel="prev" title="D3 基础知识-核心概念">
+      <i class="fa fa-chevron-left"></i> D3 基础知识-核心概念
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2018/10/07/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C-%E8%AF%86%E5%88%AB%E6%89%8B%E5%86%99%E6%95%B0%E5%AD%97/" rel="next" title="神经网络-识别手写数字">
+      神经网络-识别手写数字 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let activeClass = CONFIG.comments.activeClass;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#添加元素"><span class="nav-number">1.</span> <span class="nav-text">添加元素</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#绑定数据"><span class="nav-number">2.</span> <span class="nav-text">绑定数据</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Array"><span class="nav-number">2.1.</span> <span class="nav-text">Array</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#TSV"><span class="nav-number">2.2.</span> <span class="nav-text">TSV</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用数据"><span class="nav-number">3.</span> <span class="nav-text">使用数据</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#绘制div"><span class="nav-number">4.</span> <span class="nav-text">绘制div</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SVG"><span class="nav-number">5.</span> <span class="nav-text">SVG</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#rect"><span class="nav-number">5.1.</span> <span class="nav-text">rect</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#circle"><span class="nav-number">5.2.</span> <span class="nav-text">circle</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ellipse"><span class="nav-number">5.3.</span> <span class="nav-text">ellipse</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#line"><span class="nav-number">5.4.</span> <span class="nav-text">line</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#text"><span class="nav-number">5.5.</span> <span class="nav-text">text</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#path"><span class="nav-number">5.6.</span> <span class="nav-text">path</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Scale"><span class="nav-number">6.</span> <span class="nav-text">Scale</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Axis"><span class="nav-number">7.</span> <span class="nav-text">Axis</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Kui Yang</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">5</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/cnyangkui" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;cnyangkui" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Kui Yang</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v4.2.0
+  </div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">主题 – <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> v7.7.1
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
