@@ -202,7 +202,7 @@
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/30/%E6%B7%B1%E5%9C%B3%E5%A4%A7%E5%AD%A6%E5%8F%AF%E8%A7%86%E8%AE%A1%E7%AE%97%E6%9A%91%E6%9C%9F%E5%AD%A6%E6%A0%A13dsMax%E5%AE%9E%E8%B7%B5/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="/images/avatar.jpg">
       <meta itemprop="name" content="Kui Yang">
       <meta itemprop="description" content="">
     </span>
@@ -372,6 +372,8 @@
 
       <div class="site-overview-wrap sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Kui Yang"
+      src="/images/avatar.jpg">
   <p class="site-author-name" itemprop="name">Kui Yang</p>
   <div class="site-description" itemprop="description"></div>
 </div>
@@ -482,6 +484,25 @@
 
 
 
+<script>
+if (document.querySelectorAll('div.pdf').length) {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/pdfobject@2/pdfobject.min.js', () => {
+    document.querySelectorAll('div.pdf').forEach(element => {
+      PDFObject.embed(element.getAttribute('target'), element, {
+        pdfOpenParams: {
+          navpanes : 0,
+          toolbar  : 0,
+          statusbar: 0,
+          pagemode : 'thumbs',
+          view     : 'FitH'
+        },
+        PDFJS_URL: '/lib/pdf/web/viewer.html',
+        height: element.getAttribute('height') || '500px'
+      });
+    });
+  }, window.PDFObject);
+}
+</script>
 
 
 
