@@ -6,44 +6,44 @@
     <content><![CDATA[<p>做了一个神经网络入门级的PPT，主要包括神经网络的一些基础知识：神经元模型、神经网络结构、代价函数、梯度下降算法、反向传播算法等等。</p>
 <a id="more"></a>
 
-<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><img src="/2018/10/30/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%85%A5%E9%97%A8/2.png" class="">
+<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><!-- <img src="/2018/10/30/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%85%A5%E9%97%A8/2.png" class="">
 <img src="/2018/10/30/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%85%A5%E9%97%A8/3.png" class="">
-<img src="/2018/10/30/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%85%A5%E9%97%A8/4.png" class="">
-
-<h2 id="神经元模型"><a href="#神经元模型" class="headerlink" title="神经元模型"></a>神经元模型</h2><img src="/2018/10/30/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%85%A5%E9%97%A8/5.png" class="">
+<img src="/2018/10/30/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%85%A5%E9%97%A8/4.png" class=""> -->
+<p><img src="https://s2.ax1x.com/2020/02/20/3eHHY9.png" alt="3eHHY9.png"><br><img src="https://s2.ax1x.com/2020/02/20/3eHLS1.png" alt="3eHLS1.png"><br><img src="https://s2.ax1x.com/2020/02/20/3eHIwF.png" alt="3eHIwF.png"></p>
+<h2 id="神经元模型"><a href="#神经元模型" class="headerlink" title="神经元模型"></a>神经元模型</h2><!-- <img src="/2018/10/30/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%85%A5%E9%97%A8/5.png" class="">
 <img src="/2018/10/30/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%85%A5%E9%97%A8/6.png" class="">
-<img src="/2018/10/30/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%85%A5%E9%97%A8/7.png" class="">
-
-<h2 id="神经网络结构"><a href="#神经网络结构" class="headerlink" title="神经网络结构"></a>神经网络结构</h2><img src="/2018/10/30/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%85%A5%E9%97%A8/8.png" class="">
-
-<h2 id="代价函数"><a href="#代价函数" class="headerlink" title="代价函数"></a>代价函数</h2><img src="/2018/10/30/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%85%A5%E9%97%A8/9.png" class="">
-
-<h2 id="梯度下降算法"><a href="#梯度下降算法" class="headerlink" title="梯度下降算法"></a>梯度下降算法</h2><img src="/2018/10/30/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%85%A5%E9%97%A8/10.png" class="">
+<img src="/2018/10/30/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%85%A5%E9%97%A8/7.png" class=""> -->
+<p><img src="https://s2.ax1x.com/2020/02/20/3eHhLT.png" alt="3eHhLT.png"><br><img src="https://s2.ax1x.com/2020/02/20/3eHjOK.png" alt="3eHjOK.png"><br><img src="https://s2.ax1x.com/2020/02/20/3eHzwD.png" alt="3eHzwD.png"></p>
+<h2 id="神经网络结构"><a href="#神经网络结构" class="headerlink" title="神经网络结构"></a>神经网络结构</h2><!-- <img src="/2018/10/30/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%85%A5%E9%97%A8/8.png" class=""> -->
+<p><img src="https://s2.ax1x.com/2020/02/20/3eb9FH.png" alt="3eb9FH.png"></p>
+<h2 id="代价函数"><a href="#代价函数" class="headerlink" title="代价函数"></a>代价函数</h2><!-- <img src="/2018/10/30/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%85%A5%E9%97%A8/9.png" class=""> -->
+<p><img src="https://s2.ax1x.com/2020/02/20/3ebPfA.png" alt="3ebPfA.png"></p>
+<h2 id="梯度下降算法"><a href="#梯度下降算法" class="headerlink" title="梯度下降算法"></a>梯度下降算法</h2><!-- <img src="/2018/10/30/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%85%A5%E9%97%A8/10.png" class="">
 <img src="/2018/10/30/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%85%A5%E9%97%A8/11.png" class="">
 <img src="/2018/10/30/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%85%A5%E9%97%A8/12.png" class="">
 <img src="/2018/10/30/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%85%A5%E9%97%A8/13.png" class="">
-<img src="/2018/10/30/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%85%A5%E9%97%A8/14.png" class="">
-
-<h2 id="反向传播算法"><a href="#反向传播算法" class="headerlink" title="反向传播算法"></a>反向传播算法</h2><img src="/2018/10/30/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%85%A5%E9%97%A8/15.png" class="">
+<img src="/2018/10/30/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%85%A5%E9%97%A8/14.png" class=""> -->
+<p><img src="https://s2.ax1x.com/2020/02/20/3ebklt.png" alt="3ebklt.png"><br><img src="https://s2.ax1x.com/2020/02/20/3ebKYj.png" alt="3ebKYj.png"><br><img src="https://s2.ax1x.com/2020/02/20/3ebUk4.png" alt="3ebUk4.png"><br><img src="https://s2.ax1x.com/2020/02/20/3eb60O.png" alt="3eb60O.png"><br><img src="https://s2.ax1x.com/2020/02/20/3ebh9A.png" alt="3ebh9A.png"></p>
+<h2 id="反向传播算法"><a href="#反向传播算法" class="headerlink" title="反向传播算法"></a>反向传播算法</h2><!-- <img src="/2018/10/30/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%85%A5%E9%97%A8/15.png" class="">
 <img src="/2018/10/30/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%85%A5%E9%97%A8/16.png" class="">
 <img src="/2018/10/30/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%85%A5%E9%97%A8/17.png" class="">
 <img src="/2018/10/30/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%85%A5%E9%97%A8/18.png" class="">
 <img src="/2018/10/30/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%85%A5%E9%97%A8/19.png" class="">
 <img src="/2018/10/30/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%85%A5%E9%97%A8/20.png" class="">
 <img src="/2018/10/30/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%85%A5%E9%97%A8/21.png" class="">
-<img src="/2018/10/30/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%85%A5%E9%97%A8/22.png" class="">
-
-<h2 id="使用神经网络识别手写数字"><a href="#使用神经网络识别手写数字" class="headerlink" title="使用神经网络识别手写数字"></a>使用神经网络识别手写数字</h2><img src="/2018/10/30/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%85%A5%E9%97%A8/23.png" class="">
-<img src="/2018/10/30/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%85%A5%E9%97%A8/24.png" class="">
-
-<h2 id="交叉熵代价函数"><a href="#交叉熵代价函数" class="headerlink" title="交叉熵代价函数"></a>交叉熵代价函数</h2><img src="/2018/10/30/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%85%A5%E9%97%A8/25.png" class="">
+<img src="/2018/10/30/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%85%A5%E9%97%A8/22.png" class=""> -->
+<p><img src="https://s2.ax1x.com/2020/02/20/3eb5ct.png" alt="3eb5ct.png"><br><img src="https://s2.ax1x.com/2020/02/20/3ebTnf.png" alt="3ebTnf.png"><br><img src="https://s2.ax1x.com/2020/02/20/3ebIjP.png" alt="3ebIjP.png"><br><img src="https://s2.ax1x.com/2020/02/20/3eb7B8.png" alt="3eb7B8.png"><br><img src="https://s2.ax1x.com/2020/02/20/3ebqAg.png" alt="3ebqAg.png"><br><img src="https://s2.ax1x.com/2020/02/20/3ebLNQ.png" alt="3ebLNQ.png"><br><img src="https://s2.ax1x.com/2020/02/20/3ebj9s.png" alt="3ebj9s.png"><br><img src="https://s2.ax1x.com/2020/02/20/3ebv3n.png" alt="3ebv3n.png"></p>
+<h2 id="使用神经网络识别手写数字"><a href="#使用神经网络识别手写数字" class="headerlink" title="使用神经网络识别手写数字"></a>使用神经网络识别手写数字</h2><!-- <img src="/2018/10/30/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%85%A5%E9%97%A8/23.png" class="">
+<img src="/2018/10/30/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%85%A5%E9%97%A8/24.png" class=""> -->
+<p><img src="https://s2.ax1x.com/2020/02/20/3mSB3F.png" alt="3mSB3F.png"><br><img src="https://s2.ax1x.com/2020/02/20/3mSDc4.png" alt="3mSDc4.png"></p>
+<h2 id="交叉熵代价函数"><a href="#交叉熵代价函数" class="headerlink" title="交叉熵代价函数"></a>交叉熵代价函数</h2><!-- <img src="/2018/10/30/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%85%A5%E9%97%A8/25.png" class="">
 <img src="/2018/10/30/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%85%A5%E9%97%A8/26.png" class="">
-<img src="/2018/10/30/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%85%A5%E9%97%A8/27.png" class="">
-
-<h2 id="过度拟合和规范化"><a href="#过度拟合和规范化" class="headerlink" title="过度拟合和规范化"></a>过度拟合和规范化</h2><img src="/2018/10/30/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%85%A5%E9%97%A8/28.png" class="">
+<img src="/2018/10/30/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%85%A5%E9%97%A8/27.png" class=""> -->
+<p><img src="https://s2.ax1x.com/2020/02/20/3mSdhT.png" alt="3mSdhT.png"><br><img src="https://s2.ax1x.com/2020/02/20/3mS09U.png" alt="3mS09U.png"><br><img src="https://s2.ax1x.com/2020/02/20/3mSaNV.png" alt="3mSaNV.png"></p>
+<h2 id="过度拟合和规范化"><a href="#过度拟合和规范化" class="headerlink" title="过度拟合和规范化"></a>过度拟合和规范化</h2><!-- <img src="/2018/10/30/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%85%A5%E9%97%A8/28.png" class="">
 <img src="/2018/10/30/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%85%A5%E9%97%A8/29.png" class="">
-<img src="/2018/10/30/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%85%A5%E9%97%A8/30.png" class="">
-
+<img src="/2018/10/30/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%85%A5%E9%97%A8/30.png" class=""> -->
+<p><img src="https://s2.ax1x.com/2020/02/20/3mSrjJ.png" alt="3mSrjJ.png"><br><img src="https://s2.ax1x.com/2020/02/20/3mS6BR.png" alt="3mS6BR.png"><br><img src="https://s2.ax1x.com/2020/02/20/3mScH1.png" alt="3mScH1.png"></p>
 <a href="/2018/10/30/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%85%A5%E9%97%A8/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%85%A5%E9%97%A8PPT.pptx" title="PPT下载">PPT下载</a>]]></content>
       <categories>
         <category>Machine Learning</category>
@@ -58,10 +58,10 @@
     <content><![CDATA[<p>使用MNIST数据集训练神经网络模型。训练数据由28*28的手写数字的图像组成，输入层包含784=28*28个神经元。输入像素是灰度级的，值为0.0表示白色，值为1.0表示黑色，中间数值表示逐渐暗淡的灰色。</p>
 <a id="more"></a>
 
-<img src="/2018/10/07/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C-%E8%AF%86%E5%88%AB%E6%89%8B%E5%86%99%E6%95%B0%E5%AD%97/intro.png" class="">
-
-<h2 id="Algorithm"><a href="#Algorithm" class="headerlink" title="Algorithm"></a>Algorithm</h2><img src="/2018/10/07/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C-%E8%AF%86%E5%88%AB%E6%89%8B%E5%86%99%E6%95%B0%E5%AD%97/algorithm.png" class="">
-
+<!-- <img src="/2018/10/07/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C-%E8%AF%86%E5%88%AB%E6%89%8B%E5%86%99%E6%95%B0%E5%AD%97/intro.png" class=""> -->
+<p><a href="https://imgchr.com/i/3eo5ee" target="_blank" rel="noopener"><img src="https://s2.ax1x.com/2020/02/20/3eo5ee.md.png" alt="3eo5ee.md.png"></a></p>
+<h2 id="Algorithm"><a href="#Algorithm" class="headerlink" title="Algorithm"></a>Algorithm</h2><!-- <img src="/2018/10/07/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C-%E8%AF%86%E5%88%AB%E6%89%8B%E5%86%99%E6%95%B0%E5%AD%97/algorithm.png" class=""> -->
+<p><a href="https://imgchr.com/i/3eoIdH" target="_blank" rel="noopener"><img src="https://s2.ax1x.com/2020/02/20/3eoIdH.md.png" alt="3eoIdH.md.png"></a></p>
 <h2 id="Codes"><a href="#Codes" class="headerlink" title="Codes"></a>Codes</h2><p>mnist_loader.py: 加载数据</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> pickle</span><br><span class="line"><span class="keyword">import</span> gzip</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">load_data</span><span class="params">()</span>:</span></span><br><span class="line">    f = gzip.open(<span class="string">'data/mnist.pkl.gz'</span>, <span class="string">'rb'</span>)</span><br><span class="line">    training_data, validation_data, test_data = pickle.load(f, encoding=<span class="string">"latin1"</span>)</span><br><span class="line">    f.close()</span><br><span class="line">    <span class="keyword">return</span> (training_data, validation_data, test_data)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">load_data_wrapper</span><span class="params">()</span>:</span></span><br><span class="line">    tr_d, va_d, te_d = load_data()</span><br><span class="line">    <span class="comment"># training_data[0]: x; 1*784</span></span><br><span class="line">    <span class="comment"># training_data[1]: y; 0-9</span></span><br><span class="line">    training_inputs = [np.reshape(x, (<span class="number">784</span>, <span class="number">1</span>)) <span class="keyword">for</span> x <span class="keyword">in</span> tr_d[<span class="number">0</span>]]</span><br><span class="line">    training_results = [vectorized_result(y) <span class="keyword">for</span> y <span class="keyword">in</span> tr_d[<span class="number">1</span>]]</span><br><span class="line">    training_data = zip(training_inputs, training_results)</span><br><span class="line">    validation_inputs = [np.reshape(x, (<span class="number">784</span>, <span class="number">1</span>)) <span class="keyword">for</span> x <span class="keyword">in</span> va_d[<span class="number">0</span>]]</span><br><span class="line">    validation_data = zip(validation_inputs, va_d[<span class="number">1</span>])</span><br><span class="line">    test_inputs = [np.reshape(x, (<span class="number">784</span>, <span class="number">1</span>)) <span class="keyword">for</span> x <span class="keyword">in</span> te_d[<span class="number">0</span>]]</span><br><span class="line">    test_data = zip(test_inputs, te_d[<span class="number">1</span>])</span><br><span class="line">    <span class="keyword">return</span> (training_data, validation_data, test_data)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">vectorized_result</span><span class="params">(j)</span>:</span></span><br><span class="line">    v = np.zeros((<span class="number">10</span>, <span class="number">1</span>))</span><br><span class="line">    v[j] = <span class="number">1.0</span></span><br><span class="line">    <span class="keyword">return</span> v</span><br></pre></td></tr></table></figure>
 
@@ -321,21 +321,31 @@
 <p>在这次四天的学习中，教授的全英文讲座听得我一脸懵逼，全靠PPT涨见识。在实践课中，倒是把3ds Max小小入门了下，后来莫名其妙成为了该期暑期学校的优秀学员，心虚 (ಡωಡ) </p>
 <!-- <img src="/2017/07/30/%E6%B7%B1%E5%9C%B3%E5%A4%A7%E5%AD%A6%E5%8F%AF%E8%A7%86%E8%AE%A1%E7%AE%97%E6%9A%91%E6%9C%9F%E5%AD%A6%E6%A0%A13dsMax%E5%AE%9E%E8%B7%B5/summer_school.png" class=""> -->
 <p><img src="https://s2.ax1x.com/2020/02/20/3e51l8.png" alt="3e51l8.png"></p>
-<h2 id="我的作品"><a href="#我的作品" class="headerlink" title="我的作品"></a>我的作品</h2><!-- <img src="/2017/07/30/%E6%B7%B1%E5%9C%B3%E5%A4%A7%E5%AD%A6%E5%8F%AF%E8%A7%86%E8%AE%A1%E7%AE%97%E6%9A%91%E6%9C%9F%E5%AD%A6%E6%A0%A13dsMax%E5%AE%9E%E8%B7%B5/1.jpg" class=""> -->
-<p><img src="https://s2.ax1x.com/2020/02/20/3e5KYt.jpg" alt="3e5KYt.jpg"></p>
-<p>主要使用简单立体模型的创建和移动、缩放、旋转等操作，最后进行灯光渲染。</p>
+<h2 id="我的作品"><a href="#我的作品" class="headerlink" title="我的作品"></a>我的作品</h2><ol>
+<li>主要使用简单立体模型的创建和移动、缩放、旋转等操作，最后进行灯光渲染。</li>
+</ol>
+<!-- <img src="/2017/07/30/%E6%B7%B1%E5%9C%B3%E5%A4%A7%E5%AD%A6%E5%8F%AF%E8%A7%86%E8%AE%A1%E7%AE%97%E6%9A%91%E6%9C%9F%E5%AD%A6%E6%A0%A13dsMax%E5%AE%9E%E8%B7%B5/1.jpg" class=""> -->
+<p><a href="https://imgchr.com/i/3e5KYt" target="_blank" rel="noopener"><img src="https://s2.ax1x.com/2020/02/20/3e5KYt.md.jpg" alt="3e5KYt.md.jpg"></a></p>
+<ol start="2">
+<li>主要使用样条线、多边形的编辑、挤出等操作。培养空间思维，掌握三视图的配合使用，能够更好地进行3D建模。</li>
+</ol>
 <!-- <img src="/2017/07/30/%E6%B7%B1%E5%9C%B3%E5%A4%A7%E5%AD%A6%E5%8F%AF%E8%A7%86%E8%AE%A1%E7%AE%97%E6%9A%91%E6%9C%9F%E5%AD%A6%E6%A0%A13dsMax%E5%AE%9E%E8%B7%B5/2.jpg" class=""> -->
-<p><img src="https://s2.ax1x.com/2020/02/20/3e536S.jpg" alt="3e536S.jpg"></p>
-<p>主要使用样条线、多边形的编辑、挤出等操作。培养空间思维，掌握三视图的配合使用，能够更好地进行3D建模。</p>
+<p><a href="https://imgchr.com/i/3e536S" target="_blank" rel="noopener"><img src="https://s2.ax1x.com/2020/02/20/3e536S.md.jpg" alt="3e536S.md.jpg"></a></p>
+<ol start="3">
+<li>通过车削操作，进行苹果、高脚杯、瓶子、罐子等简单模型的创建；贴图操作，能够将创建的模型贴上适合的皮肤图片。苹果的影子有个小洞（捂脸）</li>
+</ol>
 <!-- <img src="/2017/07/30/%E6%B7%B1%E5%9C%B3%E5%A4%A7%E5%AD%A6%E5%8F%AF%E8%A7%86%E8%AE%A1%E7%AE%97%E6%9A%91%E6%9C%9F%E5%AD%A6%E6%A0%A13dsMax%E5%AE%9E%E8%B7%B5/3.jpg" class=""> -->
-<p><img src="https://s2.ax1x.com/2020/02/20/3e5tTs.jpg" alt="3e5tTs.jpg"></p>
-<p>通过车削操作，进行苹果、高脚杯、瓶子、罐子等简单模型的创建；贴图操作，能够将创建的模型贴上适合的皮肤图片。苹果的影子有个小洞（捂脸）</p>
+<p><a href="https://imgchr.com/i/3e5tTs" target="_blank" rel="noopener"><img src="https://s2.ax1x.com/2020/02/20/3e5tTs.md.jpg" alt="3e5tTs.md.jpg"></a></p>
+<ol start="4">
+<li>一个大杂烩，将前面讲到的操作基本都用上了。</li>
+</ol>
 <!-- <img src="/2017/07/30/%E6%B7%B1%E5%9C%B3%E5%A4%A7%E5%AD%A6%E5%8F%AF%E8%A7%86%E8%AE%A1%E7%AE%97%E6%9A%91%E6%9C%9F%E5%AD%A6%E6%A0%A13dsMax%E5%AE%9E%E8%B7%B5/4.jpg" class=""> -->
-<p><img src="https://s2.ax1x.com/2020/02/20/3e5lSf.jpg" alt="3e5lSf.jpg"></p>
-<p>一个大杂烩，将前面讲到的操作基本都用上了。</p>
+<p><a href="https://imgchr.com/i/3e5lSf" target="_blank" rel="noopener"><img src="https://s2.ax1x.com/2020/02/20/3e5lSf.md.jpg" alt="3e5lSf.md.jpg"></a></p>
+<ol start="5">
+<li>这是树形结构的创意书架，主要使用了样条线的编辑和挤出操作等，加上灯光的渲染。</li>
+</ol>
 <!-- <img src="/2017/07/30/%E6%B7%B1%E5%9C%B3%E5%A4%A7%E5%AD%A6%E5%8F%AF%E8%A7%86%E8%AE%A1%E7%AE%97%E6%9A%91%E6%9C%9F%E5%AD%A6%E6%A0%A13dsMax%E5%AE%9E%E8%B7%B5/5.jpg" class=""> -->
-<p><img src="https://s2.ax1x.com/2020/02/20/3e5MfP.jpg" alt="3e5MfP.jpg"></p>
-<p>这是树形结构的创意书架，主要使用了样条线的编辑和挤出操作等，加上灯光的渲染。</p>
+<p><a href="https://imgchr.com/i/3e5MfP" target="_blank" rel="noopener"><img src="https://s2.ax1x.com/2020/02/20/3e5MfP.md.jpg" alt="3e5MfP.md.jpg"></a></p>
 ]]></content>
       <categories>
         <category>Others</category>
