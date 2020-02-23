@@ -1,6 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>论文笔记 - RadCloud: Visualizing Multiple Texts with Merged Word Clouds</title>
+    <url>/2020/02/23/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0-RadCloud-Visualizing-Multiple-Texts-with-Merged-Word-Clouds/</url>
+    <content><![CDATA[<p>Burch M, Lohmann S, Beck F, et al. RadCloud: Visualizing multiple texts with merged word clouds[C]//2014 18th International Conference on Information Visualisation. IEEE, 2014: 108-113.</p>
+<p>RadCloud能够同时比较多个文本的内容，采用径向布局将所有词汇放在一个圆圈内，并能够呈现词汇与各个文本类别的相关性。</p>
+<a id="more"></a>
+
+<h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p>词云通常用于可视化文本中的重要词语，它们常常作为深入分析的起点，帮助判断文本的主要内容或是否与特定的信息需求相关。目前大多数词云针对单个文本进行可视化，很少能够同时可视化多个文本并比较它们的词汇和词汇频率。</p>
+<p>这篇论文的目标是比较多个文本的内容，每个词汇只出现一次，而且词汇与每个文本类别的相关性也要在视觉上显示出来。</p>
+<h2 id="RadCloud-Visualization"><a href="#RadCloud-Visualization" class="headerlink" title="RadCloud Visualization"></a>RadCloud Visualization</h2><h3 id="Design-Decisions"><a href="#Design-Decisions" class="headerlink" title="Design Decisions"></a>Design Decisions</h3><ol>
+<li>词云采用径向布局将所有词汇放在一个圆圈内，圆弧的颜色对应文本类别。</li>
+<li>每个词汇只出现一次，字体大小编码该词汇在所有类别中的最大相关性，颜色来源于最大相关性所在的类别。</li>
+<li>词汇下方添加一个堆叠的柱状图，以表示它与每个类别的相关性。</li>
+</ol>
+<p><img src="https://s2.ax1x.com/2020/02/23/33Alh8.png" alt="33Alh8.png"></p>
+<h3 id="Intended-Word-Positions"><a href="#Intended-Word-Positions" class="headerlink" title="Intended Word Positions"></a>Intended Word Positions</h3><p>使用一种新的 springs-based layout algorithm。</p>
+<p>假设文本可以划分成一组类别：$C:=\lbrace c_1, …, c_n \rbrace$</p>
+<p>所有词汇的集合可以表示为：$W:=\bigcup_{c \in C} W_c$</p>
+<p>计算词汇属于某个类别的权重，$weight(word_i, category_c)$如何计算讲得不是很清楚，我认为可以用tf或tf-idf表示：</p>
+<p>$$<br>w{^c_i} =<br>\begin{cases}<br>0,  &amp; \text{if $w_i \notin W_c$} \<br>weight(word_i, category_c) \in R, &amp; \text{if $w_i \in W_c$}<br>\end{cases}<br>$$</p>
+<p>标准化权重：</p>
+<p>$$ w{^{‘c}<em>i} := \frac {w{^c_i}} {\sum</em>{k=1}^{|W|}w{^c_k}} $$</p>
+<p>词云设计成圆形形状，这个圆围绕着坐标系的原点，每个类别在圆的边上均匀分布。然后通过从圆的顶部开始绕圆心旋转点来获得各个类别的位置。从原点到类别点的向量表示为： $V_c := \overrightarrow{position(category_c)} $</p>
+<p>词汇在各个类别所在方向上的权重：<br>$$<br>w{^{‘’c}<em>i} := \frac {w{^{‘c}_i}} {\sum</em>{k=1}^{|C|}w{^{‘k}_i}}<br>$$</p>
+<p>词汇的位置：<br>$$<br>position(word_i) := \sum_{c=1}^{|C|}(V_c \times w_i^{‘’c})<br>$$</p>
+<h3 id="Corrected-Word-Positions"><a href="#Corrected-Word-Positions" class="headerlink" title="Corrected Word Positions"></a>Corrected Word Positions</h3><p>此时的布局结果中，词汇可能会出现重叠。使用Springs建模词汇边界框间的距离，当两个词汇重叠时使其远离彼此少许。但是词汇相对于圆心的位置在语义上是相关的，因此坐标位置不能改变太大。</p>
+<p><img src="https://s2.ax1x.com/2020/02/23/33FDaV.png" alt="33FDaV.png"></p>
+<h2 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h2><ol>
+<li>这是一个可视化不同类别文档/文档集合的词云。每个词汇只在词云中出现一次，用户可以查看词汇与每个类别的相关性。</li>
+<li>词汇位置是根据它与每个文本类别的相关性来决定的。为了避免词汇重叠，使用Springs布局纠正了词汇的位置，但尽量减少移动词汇。</li>
+<li>词汇位置是一个指标，词汇位置越靠近某一类别，则与该类别的相关性越大；词汇下面的堆叠柱状图也用来可视化词汇与每一类文档的相关性，颜色表示不同的文本类别。</li>
+</ol>
+]]></content>
+      <categories>
+        <category>Visualization</category>
+      </categories>
+      <tags>
+        <tag>word cloud</tag>
+        <tag>text visualization</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>设计模式-观察者模式</title>
     <url>/2020/02/22/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E8%A7%82%E5%AF%9F%E8%80%85%E6%A8%A1%E5%BC%8F/</url>
     <content><![CDATA[<p>定义了一种一对多的依赖关系，让多个观察者对象同时监听某一个主题对象。这个主题对象在状态发生变化时，会通知所有观察者对象，使他们能够自己更新自己。</p>
@@ -17,10 +58,10 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Client</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		ConcreteSubject subject = <span class="keyword">new</span> ConcreteSubject();</span><br><span class="line">		ConcreteObserver observer1 = <span class="keyword">new</span> ConcreteObserver(subject, <span class="string">"X"</span>);</span><br><span class="line">		ConcreteObserver observer2 = <span class="keyword">new</span> ConcreteObserver(subject, <span class="string">"Y"</span>);</span><br><span class="line">		ConcreteObserver observer3 = <span class="keyword">new</span> ConcreteObserver(subject, <span class="string">"Z"</span>);</span><br><span class="line"></span><br><span class="line">		<span class="comment">// 更新状态并通知</span></span><br><span class="line">		subject.setSubjectState(<span class="string">"A"</span>);</span><br><span class="line">		subject.notifyObservers();</span><br><span class="line"></span><br><span class="line">		<span class="comment">// 删除一个观察者</span></span><br><span class="line">		subject.detach(observer2);</span><br><span class="line">		<span class="comment">// 更新状态并通知</span></span><br><span class="line">		subject.setSubjectState(<span class="string">"B"</span>);</span><br><span class="line">		subject.notifyObservers();</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
       <categories>
-        <category>设计模式</category>
+        <category>Design Pattern</category>
       </categories>
       <tags>
-        <tag>设计模式</tag>
+        <tag>Design Pattern</tag>
       </tags>
   </entry>
   <entry>
@@ -38,10 +79,10 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Client</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		Originator originator = <span class="keyword">new</span> Originator();</span><br><span class="line">		originator.setState(<span class="string">"on"</span>);</span><br><span class="line">		originator.show();</span><br><span class="line"></span><br><span class="line">		<span class="comment">// 保存状态</span></span><br><span class="line">		Caretaker caretaker = <span class="keyword">new</span> Caretaker();</span><br><span class="line">		caretaker.setMemento(originator.createMemento());</span><br><span class="line"></span><br><span class="line">		<span class="comment">// 修改状态</span></span><br><span class="line">		originator.setState(<span class="string">"off"</span>);</span><br><span class="line">		originator.show();</span><br><span class="line"></span><br><span class="line">		<span class="comment">// 恢复初始状态</span></span><br><span class="line">		originator.setMemento(caretaker.getMemento());</span><br><span class="line">		originator.show();</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
       <categories>
-        <category>设计模式</category>
+        <category>Design Pattern</category>
       </categories>
       <tags>
-        <tag>设计模式</tag>
+        <tag>Design Pattern</tag>
       </tags>
   </entry>
   <entry>
@@ -63,10 +104,10 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Client</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		ConcreteMediator mediator = <span class="keyword">new</span> ConcreteMediator();</span><br><span class="line">		ConcreteColleague1 c1 = <span class="keyword">new</span> ConcreteColleague1(mediator);</span><br><span class="line">		ConcreteColleague2 c2 = <span class="keyword">new</span> ConcreteColleague2(mediator);</span><br><span class="line">		mediator.setC1(c1);</span><br><span class="line">		mediator.setC2(c2);</span><br><span class="line">		c1.send(<span class="string">"I'm ConcreteColleague1."</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
       <categories>
-        <category>设计模式</category>
+        <category>Design Pattern</category>
       </categories>
       <tags>
-        <tag>设计模式</tag>
+        <tag>Design Pattern</tag>
       </tags>
   </entry>
   <entry>
@@ -86,10 +127,10 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Client</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		ConcreteAggregate aggregate = <span class="keyword">new</span> ConcreteAggregate();</span><br><span class="line">		aggregate.add(<span class="number">1</span>);</span><br><span class="line">		aggregate.add(<span class="number">2</span>);</span><br><span class="line">		aggregate.add(<span class="number">3</span>);</span><br><span class="line">		Iterator&lt;Object&gt; iterator = aggregate.createIterator();</span><br><span class="line">		<span class="keyword">while</span> (iterator.hasNext()) &#123;</span><br><span class="line">			System.out.println(iterator.next());</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
       <categories>
-        <category>设计模式</category>
+        <category>Design Pattern</category>
       </categories>
       <tags>
-        <tag>设计模式</tag>
+        <tag>Design Pattern</tag>
       </tags>
   </entry>
   <entry>
@@ -135,10 +176,10 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Client</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		Context context = <span class="keyword">new</span> Context();</span><br><span class="line">		<span class="keyword">boolean</span> res = context.getResult(<span class="string">"true&amp;&amp;true"</span>);</span><br><span class="line">		System.out.println(res);</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
       <categories>
-        <category>设计模式</category>
+        <category>Design Pattern</category>
       </categories>
       <tags>
-        <tag>设计模式</tag>
+        <tag>Design Pattern</tag>
       </tags>
   </entry>
   <entry>
@@ -178,10 +219,10 @@
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Client</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		Receiver receiver = <span class="keyword">new</span> Receiver();</span><br><span class="line">		Command command = <span class="keyword">new</span> ConcreteCommand(receiver);</span><br><span class="line">		Invoker invoker = <span class="keyword">new</span> Invoker();</span><br><span class="line">		invoker.setCommand(command);</span><br><span class="line">		invoker.executeCommand();</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 ]]></content>
       <categories>
-        <category>设计模式</category>
+        <category>Design Pattern</category>
       </categories>
       <tags>
-        <tag>设计模式</tag>
+        <tag>Design Pattern</tag>
       </tags>
   </entry>
   <entry>
@@ -203,10 +244,10 @@
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Client</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		Handler superiorHandler = <span class="keyword">new</span> ConcreteHandler1(<span class="keyword">null</span>);</span><br><span class="line">		Handler juniorHandler = <span class="keyword">new</span> ConcreteHandler2(superiorHandler);</span><br><span class="line">		Request request1 = <span class="keyword">new</span> Request(<span class="number">1</span>, <span class="string">"request1"</span>);</span><br><span class="line">		juniorHandler.handleRequest(request1);</span><br><span class="line">		</span><br><span class="line">		Request request2 = <span class="keyword">new</span> Request(<span class="number">2</span>, <span class="string">"request2"</span>);</span><br><span class="line">		juniorHandler.handleRequest(request2);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 ]]></content>
       <categories>
-        <category>设计模式</category>
+        <category>Design Pattern</category>
       </categories>
       <tags>
-        <tag>设计模式</tag>
+        <tag>Design Pattern</tag>
       </tags>
   </entry>
   <entry>
@@ -228,10 +269,10 @@
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ConcretePrototype2</span> <span class="keyword">implements</span> <span class="title">Cloneable</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">private</span> String field;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="title">ConcretePrototype2</span><span class="params">(String field)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">this</span>.field = field;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> String <span class="title">getField</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> field;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setField</span><span class="params">(String field)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">this</span>.field = field;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="meta">@Override</span></span><br><span class="line">	<span class="function"><span class="keyword">protected</span> Object <span class="title">clone</span><span class="params">()</span> <span class="keyword">throws</span> CloneNotSupportedException </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="keyword">super</span>.clone();</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="meta">@Override</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> String <span class="title">toString</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="string">"ConcretePrototype2 [field="</span> + field + <span class="string">"]"</span>;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 ]]></content>
       <categories>
-        <category>设计模式</category>
+        <category>Design Pattern</category>
       </categories>
       <tags>
-        <tag>设计模式</tag>
+        <tag>Design Pattern</tag>
       </tags>
   </entry>
   <entry>
@@ -260,10 +301,10 @@
 
 ]]></content>
       <categories>
-        <category>设计模式</category>
+        <category>Design Pattern</category>
       </categories>
       <tags>
-        <tag>设计模式</tag>
+        <tag>Design Pattern</tag>
       </tags>
   </entry>
   <entry>
@@ -294,10 +335,10 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Client</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		AbstractFactory factory = <span class="keyword">new</span> ConcreteFactory1();</span><br><span class="line">		AbstractProductA productA = factory.createProductA();</span><br><span class="line">		AbstractProductB productB = factory.createProductB();</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
       <categories>
-        <category>设计模式</category>
+        <category>Design Pattern</category>
       </categories>
       <tags>
-        <tag>设计模式</tag>
+        <tag>Design Pattern</tag>
       </tags>
   </entry>
   <entry>
@@ -323,10 +364,10 @@
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Client</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		Factory factory = <span class="keyword">new</span> ConcreteFactory1();</span><br><span class="line">		Product product = factory.factoryMethod();</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 ]]></content>
       <categories>
-        <category>设计模式</category>
+        <category>Design Pattern</category>
       </categories>
       <tags>
-        <tag>设计模式</tag>
+        <tag>Design Pattern</tag>
       </tags>
   </entry>
   <entry>
@@ -349,10 +390,10 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Client</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		SimpleFactory simpleFactory = <span class="keyword">new</span> SimpleFactory();</span><br><span class="line">		Product product = simpleFactory.createProduct(<span class="number">1</span>);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
       <categories>
-        <category>设计模式</category>
+        <category>Design Pattern</category>
       </categories>
       <tags>
-        <tag>设计模式</tag>
+        <tag>Design Pattern</tag>
       </tags>
   </entry>
   <entry>
@@ -368,10 +409,10 @@
 
 <h3 id="双重校验锁-线程安全"><a href="#双重校验锁-线程安全" class="headerlink" title="双重校验锁-线程安全"></a>双重校验锁-线程安全</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Singleton3</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">volatile</span> <span class="keyword">static</span> Singleton3 uniqueInstance;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">private</span> <span class="title">Singleton3</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Singleton3 <span class="title">getInstance</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">if</span> (uniqueInstance == <span class="keyword">null</span>) &#123;</span><br><span class="line">			<span class="keyword">synchronized</span> (Singleton3<span class="class">.<span class="keyword">class</span>) </span>&#123;</span><br><span class="line">				<span class="keyword">if</span> (uniqueInstance == <span class="keyword">null</span>) &#123;</span><br><span class="line">					uniqueInstance = <span class="keyword">new</span> Singleton3();</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">return</span> uniqueInstance;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
       <categories>
-        <category>设计模式</category>
+        <category>Design Pattern</category>
       </categories>
       <tags>
-        <tag>设计模式</tag>
+        <tag>Design Pattern</tag>
       </tags>
   </entry>
   <entry>
