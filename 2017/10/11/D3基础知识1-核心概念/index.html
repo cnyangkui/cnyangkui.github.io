@@ -244,49 +244,37 @@
         <p><a href="https://d3js.org/" target="_blank" rel="noopener">D3.js</a>是一个JavaScript的函数库，主要用来做数据可视化。</p>
 <p>本节内容介绍了选择集、动态属性、enter、exit、update操作和过渡。选择集描述如何选中想要操作的节点；动态属性控制选中节点元素的属性；enter、exit、update分别来添加节点、移除节点、更新节点；过渡用来制作动画效果。</p>
 <a id="more"></a>
-
 <p>下载最新版本（4.11.0）在这里：</p>
 <ul>
 <li><a href="https://github.com/d3/d3/releases/download/v4.11.0/d3.zip" target="_blank" rel="noopener">d3.zip</a></li>
 </ul>
 <p>也可直接链接，拷贝下面片段：</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://d3js.org/d3.v4.min.js"</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-
 <p>D3教程：<a href="https://github.com/d3/d3/wiki/Tutorials" target="_blank" rel="noopener">点击这里</a></p>
 <h2 id="Selections"><a href="#Selections" class="headerlink" title="Selections"></a>Selections</h2><p>D3可以选择某一种标签的所有节点进行批量操作，也可以根据需要选择单独的节点进行操作。当使用JavaScrip对某一种标签节点操作时需要进行迭代操作，而使用D3可以批量操作，减少代码冗余。</p>
 <p>选择所有节点进行操作：</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">d3.selectAll(<span class="string">"p"</span>).style(<span class="string">"color"</span>, <span class="string">"white"</span>);</span><br></pre></td></tr></table></figure>
-
 <p>选择单独节点进行操作：</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">d3.select(<span class="string">"body"</span>).style(<span class="string">"background-color"</span>, <span class="string">"black"</span>);</span><br></pre></td></tr></table></figure>
-
 <p>以上示例是按照标签名来选择节点元素（“p”和“body”），还可以按照attribute value、class、id等选择节点元素。与jQuery相似，使用<strong>#</strong>匹配<strong>id</strong>，<strong>.</strong>匹配<strong>class</strong>……</p>
 <h2 id="Dynamic-Properties"><a href="#Dynamic-Properties" class="headerlink" title="Dynamic Properties"></a>Dynamic Properties</h2><p>样式、属性可以被指定为D3中数据的函数，而不仅仅是简单的常量。</p>
 <p>例如，随机初始化段落的颜色：</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">d3.selectAll(<span class="string">"p"</span>).style(<span class="string">"color"</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="string">"hsl("</span> + <span class="built_in">Math</span>.random() * <span class="number">360</span> + <span class="string">",100%,50%)"</span>;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-
 <p>根据奇偶设置段落的颜色：</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">d3.selectAll(<span class="string">"p"</span>).style(<span class="string">"color"</span>, <span class="function"><span class="keyword">function</span>(<span class="params">d, i</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> i % <span class="number">2</span> ? <span class="string">"#fff"</span> : <span class="string">"#eee"</span>;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-
 <p>数据可以动态绑定到节点元素中。数据被指定为一个数组，每个元素作为一个参数传递到函数中，默认情况下是按索引逐个元素进行传递，数组中的第一个元素被传递给第一个节点，第二个元素被传递给第二个节点，以此类推。</p>
 <p>例如，将数字数组绑定到段落元素，段落字体大小按数组中这些数字来依次显示：</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">d3.selectAll(<span class="string">"p"</span>)</span><br><span class="line">  .data([<span class="number">4</span>, <span class="number">8</span>, <span class="number">15</span>, <span class="number">16</span>, <span class="number">23</span>, <span class="number">42</span>])</span><br><span class="line">  .style(<span class="string">"font-size"</span>, <span class="function"><span class="keyword">function</span>(<span class="params">d</span>) </span>&#123; <span class="keyword">return</span> d + <span class="string">"px"</span>; &#125;);</span><br></pre></td></tr></table></figure>
-
 <h2 id="Enter-and-Exit"><a href="#Enter-and-Exit" class="headerlink" title="Enter and Exit"></a>Enter and Exit</h2><p>使用enter和exit函数，分别可以为传入的数据创建新的节点和去除多余的节点。</p>
 <p>当数组绑定到节点时，数组中的元素逐个与选中的节点进行绑定。如果节点数量少于数组元素数量时，会创建新节点绑定多出的数据。如果节点数量多于数组元素数量时，会移除末尾多出的节点。enter之后一般使用append来进行节点元素的实际创建，exit之后一般使用remove来移除多出的节点。</p>
 <p>例：</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">d3.select(<span class="string">"body"</span>)</span><br><span class="line">  .selectAll(<span class="string">"p"</span>)</span><br><span class="line">  .data([<span class="number">4</span>, <span class="number">8</span>, <span class="number">15</span>, <span class="number">16</span>, <span class="number">23</span>, <span class="number">42</span>])</span><br><span class="line">  .enter().append(<span class="string">"p"</span>)</span><br><span class="line">  .text(<span class="function"><span class="keyword">function</span>(<span class="params">d</span>) </span>&#123; <span class="keyword">return</span> <span class="string">"I’m number "</span> + d + <span class="string">"!"</span>; &#125;);</span><br></pre></td></tr></table></figure>
-
 <p>更新节点元素。不会创建新的节点。</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Update...</span></span><br><span class="line"><span class="keyword">var</span> p = d3.select(<span class="string">"body"</span>)</span><br><span class="line">  .selectAll(<span class="string">"p"</span>)</span><br><span class="line">  .data([<span class="number">4</span>, <span class="number">8</span>, <span class="number">15</span>, <span class="number">16</span>, <span class="number">23</span>, <span class="number">42</span>])</span><br><span class="line">  .text(<span class="function"><span class="keyword">function</span>(<span class="params">d</span>) </span>&#123; <span class="keyword">return</span> d; &#125;);</span><br></pre></td></tr></table></figure>
-
 <p>创建新的节点。当节点数量小于数组元素数量时，创建新的节点，使节点数量与数据元素数量相等。</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Enter...</span></span><br><span class="line">p.enter().append(<span class="string">"p"</span>)</span><br><span class="line">	.text(<span class="function"><span class="keyword">function</span>(<span class="params">d</span>) </span>&#123; <span class="keyword">return</span> d; &#125;);</span><br></pre></td></tr></table></figure>
-
 <p>删除多余节点。当节点数量大于数组元素数量时，移除末尾多余的节点，使节点数量与数据元素数量相等。</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Exit...</span></span><br><span class="line">p.exit().remove();</span><br></pre></td></tr></table></figure>
-
 <h2 id="Transitions"><a href="#Transitions" class="headerlink" title="Transitions"></a>Transitions</h2><p>D3支持动画效果，这种动画效果可以通过对样式属性的过渡实现。其补间插值支持多种方式，比如线性、弹性等。</p>
 <p>d3-transition详解：<a href="https://github.com/d3/d3-transition" target="_blank" rel="noopener">点击这里</a></p>
 <p>这里介绍四个函数。</p>

@@ -30,7 +30,7 @@
 <meta property="og:image" content="https://s2.ax1x.com/2020/02/23/33Alh8.png">
 <meta property="og:image" content="https://s2.ax1x.com/2020/02/23/33FDaV.png">
 <meta property="article:published_time" content="2020-02-23T10:45:17.000Z">
-<meta property="article:modified_time" content="2020-02-23T15:23:10.134Z">
+<meta property="article:modified_time" content="2020-02-23T16:29:46.221Z">
 <meta property="article:author" content="Kui Yang">
 <meta property="article:tag" content="word cloud">
 <meta property="article:tag" content="text visualization">
@@ -212,10 +212,16 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2020-02-23 18:45:17 / 修改时间：23:23:10" itemprop="dateCreated datePublished" datetime="2020-02-23T18:45:17+08:00">2020-02-23</time>
+              <time title="创建时间：2020-02-23 18:45:17" itemprop="dateCreated datePublished" datetime="2020-02-23T18:45:17+08:00">2020-02-23</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-02-24 00:29:46" itemprop="dateModified" datetime="2020-02-24T00:29:46+08:00">2020-02-24</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
@@ -242,7 +248,6 @@
         <p>Burch M, Lohmann S, Beck F, et al. RadCloud: Visualizing multiple texts with merged word clouds[C]//2014 18th International Conference on Information Visualisation. IEEE, 2014: 108-113.</p>
 <p>RadCloud能够同时比较多个文本的内容，采用径向布局将所有词汇放在一个圆圈内，并能够呈现词汇与各个文本类别的相关性。</p>
 <a id="more"></a>
-
 <h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p>词云通常用于可视化文本中的重要词语，它们常常作为深入分析的起点，帮助判断文本的主要内容或是否与特定的信息需求相关。目前大多数词云针对单个文本进行可视化，很少能够同时可视化多个文本并比较它们的词汇和词汇频率。</p>
 <p>这篇论文的目标是比较多个文本的内容，每个词汇只出现一次，而且词汇与每个文本类别的相关性也要在视觉上显示出来。</p>
 <h2 id="RadCloud-Visualization"><a href="#RadCloud-Visualization" class="headerlink" title="RadCloud Visualization"></a>RadCloud Visualization</h2><h3 id="Design-Decisions"><a href="#Design-Decisions" class="headerlink" title="Design Decisions"></a>Design Decisions</h3><ol>
@@ -254,14 +259,20 @@
 <h3 id="Intended-Word-Positions"><a href="#Intended-Word-Positions" class="headerlink" title="Intended Word Positions"></a>Intended Word Positions</h3><p>使用一种新的 springs-based layout algorithm。</p>
 <p>假设文本可以划分成一组类别：$C:=\lbrace c_1, …, c_n \rbrace$</p>
 <p>所有词汇的集合可以表示为：$W:=\bigcup_{c \in C} W_c$</p>
-<p>计算词汇属于某个类别的权重，$weight(word_i, category_c)$如何计算讲得不是很清楚，我认为可以用tf或tf-idf表示：</p>
-<p>$$<br>w{^c_i} =<br>\begin{cases}<br>0,  &amp; \text{if $w_i \notin W_c$} \<br>weight(word_i, category_c) \in R, &amp; \text{if $w_i \in W_c$}<br>\end{cases}<br>$$</p>
-<p>标准化权重：</p>
-<p>$$ w{^{‘c}<em>i} := \frac {w{^c_i}} {\sum</em>{k=1}^{|W|}w{^c_k}} $$</p>
-<p>词云设计成圆形形状，这个圆围绕着坐标系的原点，每个类别在圆的边上均匀分布。然后通过从圆的顶部开始绕圆心旋转点来获得各个类别的位置。从原点到类别点的向量表示为： $V_c := \overrightarrow{position(category_c)} $</p>
-<p>词汇在各个类别所在方向上的权重：<br>$$<br>w{^{‘’c}<em>i} := \frac {w{^{‘c}_i}} {\sum</em>{k=1}^{|C|}w{^{‘k}_i}}<br>$$</p>
-<p>词汇的位置：<br>$$<br>position(word_i) := \sum_{c=1}^{|C|}(V_c \times w_i^{‘’c})<br>$$</p>
-<h3 id="Corrected-Word-Positions"><a href="#Corrected-Word-Positions" class="headerlink" title="Corrected Word Positions"></a>Corrected Word Positions</h3><p>此时的布局结果中，词汇可能会出现重叠。使用Springs建模词汇边界框间的距离，当两个词汇重叠时使其远离彼此少许。但是词汇相对于圆心的位置在语义上是相关的，因此坐标位置不能改变太大。</p>
+<p>计算每个文本类别中词汇的权重，$weight(word_i, category_c)$如何计算讲得不是很清楚，我认为可以用tf或tf-idf表示：</p>
+<script type="math/tex; mode=display">
+w{^c_i} =
+\begin{cases}
+0,  & \text{if $w_i \notin W_c$} \\
+weight(word_i, category_c) \in R, & \text{if $w_i \in W_c$}
+\end{cases}</script><p>标准化权重：</p>
+<script type="math/tex; mode=display">
+w{^{'c}_i} := \frac {w{^c_i}} {\sum_{k=1}^{|W|}w{^c_k}}</script><p>词云设计成圆形形状，这个圆围绕着坐标系的原点，每个类别在圆的边上均匀分布。然后通过从圆的顶部开始绕圆心旋转点来获得各个类别的位置。从原点到类别点的向量表示为： $V_c := \overrightarrow{position(category_c)} $</p>
+<p>词汇在各个类别所在方向上的权重：</p>
+<script type="math/tex; mode=display">
+w{^{''c}_i} := \frac {w{^{'c}_i}} {\sum_{k=1}^{|C|}w{^{'k}_i}}</script><p>词汇的位置：</p>
+<script type="math/tex; mode=display">
+position(word_i) := \sum_{c=1}^{|C|}(V_c \times w_i^{''c})</script><h3 id="Corrected-Word-Positions"><a href="#Corrected-Word-Positions" class="headerlink" title="Corrected Word Positions"></a>Corrected Word Positions</h3><p>此时的布局结果中，词汇可能会出现重叠。使用Springs建模词汇边界框间的距离，当两个词汇重叠时使其远离彼此少许。但是词汇相对于圆心的位置在语义上是相关的，因此坐标位置不能改变太大。</p>
 <p><img src="https://s2.ax1x.com/2020/02/23/33FDaV.png" alt="33FDaV.png"></p>
 <h2 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h2><ol>
 <li>这是一个可视化不同类别文档/文档集合的词云。每个词汇只在词云中出现一次，用户可以查看词汇与每个类别的相关性。</li>
