@@ -20,27 +20,34 @@
     var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Pisces","version":"7.7.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="yhahahak">
-<meta property="og:url" content="http://yoursite.com/page/3/index.html">
+  <meta name="description" content="定义一个操作中的算法的骨架，而将一些步骤延迟到子类中。模板方法使得子类可以不改变一个算法的结构即可重定义该算法的某些特定步骤。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="设计模式-模板方法">
+<meta property="og:url" content="http://yoursite.com/2020/02/25/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E6%A8%A1%E6%9D%BF%E6%96%B9%E6%B3%95/index.html">
 <meta property="og:site_name" content="yhahahak">
+<meta property="og:description" content="定义一个操作中的算法的骨架，而将一些步骤延迟到子类中。模板方法使得子类可以不改变一个算法的结构即可重定义该算法的某些特定步骤。">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://s2.ax1x.com/2020/02/25/3JHQl6.md.png">
+<meta property="article:published_time" content="2020-02-25T03:21:16.000Z">
+<meta property="article:modified_time" content="2020-02-25T03:26:20.752Z">
 <meta property="article:author" content="Kui Yang">
+<meta property="article:tag" content="Design Pattern">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://s2.ax1x.com/2020/02/25/3JHQl6.md.png">
 
-<link rel="canonical" href="http://yoursite.com/page/3/">
+<link rel="canonical" href="http://yoursite.com/2020/02/25/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E6%A8%A1%E6%9D%BF%E6%96%B9%E6%B3%95/">
 
 
 <script id="page-configurations">
   // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
-    isHome: true,
-    isPost: false
+    isHome: false,
+    isPost: true
   };
 </script>
 
-  <title>yhahahak</title>
+  <title>设计模式-模板方法 | yhahahak</title>
   
 
 
@@ -177,11 +184,11 @@
             
 
   <div class="posts-expand">
-        
+      
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/10/16/D3%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%862/">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/25/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E6%A8%A1%E6%9D%BF%E6%96%B9%E6%B3%95/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.jpg">
@@ -194,8 +201,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2017/10/16/D3%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%862/" class="post-title-link" itemprop="url">D3 基础知识</a>
+          设计模式-模板方法
         </h1>
 
         <div class="post-meta">
@@ -204,24 +210,18 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
+              
 
-              <time title="创建时间：2017-10-16 00:00:00" itemprop="dateCreated datePublished" datetime="2017-10-16T00:00:00+08:00">2017-10-16</time>
+              <time title="创建时间：2020-02-25 11:21:16 / 修改时间：11:26:20" itemprop="dateCreated datePublished" datetime="2020-02-25T11:21:16+08:00">2020-02-25</time>
             </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-02-18 22:32:27" itemprop="dateModified" datetime="2020-02-18T22:32:27+08:00">2020-02-18</time>
-              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Visualization/" itemprop="url" rel="index">
-                    <span itemprop="name">Visualization</span>
+                  <a href="/categories/Design-Pattern/" itemprop="url" rel="index">
+                    <span itemprop="name">Design Pattern</span>
                   </a>
                 </span>
             </span>
@@ -237,203 +237,46 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>D3.js基础知识，介绍了添加元素、绑定数据、使用数据、矢量图SVG、比例尺Scale和坐标轴Axis。本篇案例都是使用D3.js v4版本。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2017/10/16/D3%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%862/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
+        <p>定义一个操作中的算法的骨架，而将一些步骤延迟到子类中。模板方法使得子类可以不改变一个算法的结构即可重定义该算法的某些特定步骤。</p>
+<a id="more"></a>
+<h2 id="类图"><a href="#类图" class="headerlink" title="类图"></a>类图</h2><p><a href="https://imgchr.com/i/3JHQl6" target="_blank" rel="noopener"><img src="https://s2.ax1x.com/2020/02/25/3JHQl6.md.png" alt="3JHQl6.md.png"></a></p>
+<h2 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="class"><span class="keyword">class</span> <span class="title">AbstractClass</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">void</span> <span class="title">primitiveOperation1</span><span class="params">()</span></span>;</span><br><span class="line">	</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">void</span> <span class="title">primitiveOperation2</span><span class="params">()</span></span>;</span><br><span class="line">	</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">primitiveOperation3</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		System.out.println(<span class="string">"共有的方法3实现..."</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">templateMethod</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		primitiveOperation1();</span><br><span class="line">		primitiveOperation2();</span><br><span class="line">		primitiveOperation3();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ConcreteClassA</span> <span class="keyword">extends</span> <span class="title">AbstractClass</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="meta">@Override</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">primitiveOperation1</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		System.out.println(<span class="string">"具体类A方法1实现..."</span>);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="meta">@Override</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">primitiveOperation2</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		System.out.println(<span class="string">"具体类A方法2实现..."</span>);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ConcreteClassB</span> <span class="keyword">extends</span> <span class="title">AbstractClass</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="meta">@Override</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">primitiveOperation1</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		System.out.println(<span class="string">"具体类B方法1实现..."</span>);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="meta">@Override</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">primitiveOperation2</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		System.out.println(<span class="string">"具体类B方法2实现..."</span>);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Client</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		AbstractClass c = <span class="keyword">new</span> ConcreteClassA();</span><br><span class="line">		c.templateMethod();</span><br><span class="line">		</span><br><span class="line">		c = <span class="keyword">new</span> ConcreteClassB();</span><br><span class="line">		c.templateMethod();</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
     </div>
 
     
     
     
+
       <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
+          <div class="post-tags">
+              <a href="/tags/Design-Pattern/" rel="tag"># Design Pattern</a>
+          </div>
 
         
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/10/11/D3%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%861-%E6%A0%B8%E5%BF%83%E6%A6%82%E5%BF%B5/">
 
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="Kui Yang">
-      <meta itemprop="description" content="">
-    </span>
 
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="yhahahak">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2017/10/11/D3%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%861-%E6%A0%B8%E5%BF%83%E6%A6%82%E5%BF%B5/" class="post-title-link" itemprop="url">D3 基础知识-核心概念</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2017-10-11 09:30:00" itemprop="dateCreated datePublished" datetime="2017-10-11T09:30:00+08:00">2017-10-11</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-02-23 18:38:07" itemprop="dateModified" datetime="2020-02-23T18:38:07+08:00">2020-02-23</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Visualization/" itemprop="url" rel="index">
-                    <span itemprop="name">Visualization</span>
-                  </a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p><a href="https://d3js.org/" target="_blank" rel="noopener">D3.js</a>是一个JavaScript的函数库，主要用来做数据可视化。</p>
-<p>本节内容介绍了选择集、动态属性、enter、exit、update操作和过渡。选择集描述如何选中想要操作的节点；动态属性控制选中节点元素的属性；enter、exit、update分别来添加节点、移除节点、更新节点；过渡用来制作动画效果。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2017/10/11/D3%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%861-%E6%A0%B8%E5%BF%83%E6%A6%82%E5%BF%B5/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
         
-      
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/02/25/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E7%AD%96%E7%95%A5%E6%A8%A1%E5%BC%8F/" rel="prev" title="设计模式-策略模式">
+      <i class="fa fa-chevron-left"></i> 设计模式-策略模式
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2020/02/25/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E8%AE%BF%E9%97%AE%E8%80%85%E6%A8%A1%E5%BC%8F/" rel="next" title="设计模式-访问者模式">
+      设计模式-访问者模式 <i class="fa fa-chevron-right"></i>
+    </a></div>
     </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
       </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/30/%E6%B7%B1%E5%9C%B3%E5%A4%A7%E5%AD%A6%E5%8F%AF%E8%A7%86%E8%AE%A1%E7%AE%97%E6%9A%91%E6%9C%9F%E5%AD%A6%E6%A0%A13dsMax%E5%AE%9E%E8%B7%B5/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="Kui Yang">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="yhahahak">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2017/07/30/%E6%B7%B1%E5%9C%B3%E5%A4%A7%E5%AD%A6%E5%8F%AF%E8%A7%86%E8%AE%A1%E7%AE%97%E6%9A%91%E6%9C%9F%E5%AD%A6%E6%A0%A13dsMax%E5%AE%9E%E8%B7%B5/" class="post-title-link" itemprop="url">2017年深圳大学可视计算暑期学校 3ds Max 实践</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2017-07-30 00:00:00" itemprop="dateCreated datePublished" datetime="2017-07-30T00:00:00+08:00">2017-07-30</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-02-20 18:32:25" itemprop="dateModified" datetime="2020-02-20T18:32:25+08:00">2020-02-20</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Others/" itemprop="url" rel="index">
-                    <span itemprop="name">Others</span>
-                  </a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
     
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>今年这个时候，正在为保研推免的事情到处奔波，报名参加了深圳大学可视计算暑期学校。具体活动内容包括：由国内外著名学者和教授开设计算机图形学、计算机视觉以及可视化领域的前沿学术讲座；上实践课程，指导学生运用在广告、影视、游戏等各行业应用广泛的3ds Max软件完成简单模型的创建。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2017/07/30/%E6%B7%B1%E5%9C%B3%E5%A4%A7%E5%AD%A6%E5%8F%AF%E8%A7%86%E8%AE%A1%E7%AE%97%E6%9A%91%E6%9C%9F%E5%AD%A6%E6%A0%A13dsMax%E5%AE%9E%E8%B7%B5/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
   </article>
   
   
   
 
   </div>
-
-  
-  <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/2/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span>
-  </nav>
-
 
 
           </div>
@@ -484,6 +327,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#类图"><span class="nav-number">1.</span> <span class="nav-text">类图</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实现"><span class="nav-number">2.</span> <span class="nav-text">实现</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
