@@ -3,7 +3,8 @@
   <entry>
     <title>论文笔记-TagPies: Comparative Visualization of Textual Data</title>
     <url>/2020/02/25/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0-TagPies-Comparative-Visualization-of-Textual-Data/</url>
-    <content><![CDATA[<p>TagPie 是一种标签云布局，它以饼图的方式排列属于多个数据类别的标签。出于古典语言学研究的动机，TagPies 旨在支持古典术语的比较分析。在这种情况下，数据类别表示不同搜索关键字的共现词，因此使用 TagPies 可以比较使用这些关键字的上下文。</p>
+    <content><![CDATA[<p>Jänicke S, Blumenstein J, Rücker M, et al. TagPies: Comparative Visualization of Textual Data[C]//VISIGRAPP (3: IVAPP). 2018: 40-51.</p>
+<p>TagPie 是一种标签云布局，它以饼图的方式排列属于多个数据类别的标签。出于古典语言学研究的动机，TagPies 旨在支持古典术语的比较分析。在这种情况下，数据类别表示不同搜索关键字的共现词，因此使用 TagPies 可以比较使用这些关键字的上下文。</p>
 <a id="more"></a>
 <h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p>传统上，人文学者阅读纸质文献是为了产生和验证一些研究问题的假设。如今学者们可以访问包含大量文本的大型数字图书馆，通过查询数字图书馆来接收包含特定关键字的文本段落的能力可以加快假设的生成。但是通常情况下，大量的结果很难处理，因为文本段落需要逐个检查。</p>
 <p>TagPie 能够呈现每个搜索关键词及其共现词，每个搜索关键词及其共现词作为一个数据类别，TagPie 能够呈现标签与各个数据类别的相关性和这些标签之间的关联关系，也能够分析标签出现的上下文或语境。</p>
